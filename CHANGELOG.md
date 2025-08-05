@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0 (2025-08-05)
+
+Full Changelog: [v0.0.1...v0.1.0](https://github.com/evrimai/cartography-client/compare/v0.0.1...v0.1.0)
+
+### Features
+
+* **api:** manual updates ([d76ab2e](https://github.com/evrimai/cartography-client/commit/d76ab2e066b6aeda4e772d8d56bd06bb934bba20))
+
 ## 0.0.1 (2025-08-05)
 
 Full Changelog: [v0.0.1-alpha.0...v0.0.1](https://github.com/evrimai/cartography-client/compare/v0.0.1-alpha.0...v0.0.1)
