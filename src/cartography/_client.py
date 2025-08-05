@@ -94,7 +94,7 @@ class Cartography(SyncAPIClient):
         if base_url is None:
             base_url = os.environ.get("CARTOGRAPHY_BASE_URL")
         if base_url is None:
-            base_url = f"https://api.example.com"
+            base_url = f"https:/https://cartography.evrim.ai"
 
         super().__init__(
             version=__version__,
@@ -272,7 +272,7 @@ class AsyncCartography(AsyncAPIClient):
         if base_url is None:
             base_url = os.environ.get("CARTOGRAPHY_BASE_URL")
         if base_url is None:
-            base_url = f"https://api.example.com"
+            base_url = f"https:/https://cartography.evrim.ai"
 
         super().__init__(
             version=__version__,
