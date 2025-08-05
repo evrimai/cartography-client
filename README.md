@@ -1,7 +1,7 @@
 # Cartography Python API library
 
 <!-- prettier-ignore -->
-[![PyPI version](https://img.shields.io/pypi/v/cartography.svg?label=pypi%20(stable))](https://pypi.org/project/cartography/)
+[![PyPI version](https://img.shields.io/pypi/v/cartography-client.svg?label=pypi%20(stable))](https://pypi.org/project/cartography-client/)
 
 The Cartography Python library provides convenient access to the Cartography REST API from any Python 3.8+
 application. The library includes type definitions for all request params and response fields,
@@ -16,12 +16,9 @@ The full API of this library can be found in [api.md](api.md).
 ## Installation
 
 ```sh
-# install from the production repo
-pip install git+ssh://git@github.com/evrimai/cartography-client.git
+# install from PyPI
+pip install --pre cartography-client
 ```
-
-> [!NOTE]
-> Once this package is [published to PyPI](https://www.stainless.com/docs/guides/publish), this will become: `pip install --pre cartography`
 
 ## Usage
 
@@ -77,8 +74,8 @@ By default, the async client uses `httpx` for HTTP requests. However, for improv
 You can enable this by installing `aiohttp`:
 
 ```sh
-# install from the production repo
-pip install 'cartography[aiohttp] @ git+ssh://git@github.com/evrimai/cartography-client.git'
+# install from PyPI
+pip install --pre cartography-client[aiohttp]
 ```
 
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
