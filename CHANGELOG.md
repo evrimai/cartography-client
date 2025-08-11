@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1 (2025-08-09)
+
+Full Changelog: [v0.3.0...v0.3.1](https://github.com/evrimai/cartography-client/compare/v0.3.0...v0.3.1)
+
+### Chores
+
+* update @stainless-api/prism-cli to v5.15.0 ([5cd60ac](https://github.com/evrimai/cartography-client/commit/5cd60acb8f0654f9b86003f311aaeab26c0a63aa))
+
 ## 0.3.0 (2025-08-05)
 
 Full Changelog: [v0.2.0...v0.3.0](https://github.com/evrimai/cartography-client/compare/v0.2.0...v0.3.0)
