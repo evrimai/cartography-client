@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from typing import Dict, Iterable
-from typing_extensions import Required, TypedDict
+from typing import List
+from typing_extensions import Literal, Required, TypedDict
 
 __all__ = ["CrawlCreateParams"]
 
@@ -13,7 +13,7 @@ class CrawlCreateParams(TypedDict, total=False):
 
     crawl_id: Required[str]
 
-    engines: Required[Iterable[Dict[str, object]]]
+    engines: Required[List[Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW"]]]
 
     url: Required[str]
 

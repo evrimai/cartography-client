@@ -25,7 +25,7 @@ class TestScrape:
     def test_method_scrape_bulk(self, client: Cartography) -> None:
         scrape = client.scrape.scrape_bulk(
             crawl_id="crawl-123",
-            engines=[{"engine_type": "SCRAPINGBEE"}],
+            engines=[{"engine_type": "FLEET"}],
             s3_bucket="my-scraping-bucket",
             urls=["https://example.com", "https://example.org"],
         )
@@ -38,7 +38,7 @@ class TestScrape:
             crawl_id="crawl-123",
             engines=[
                 {
-                    "engine_type": "SCRAPINGBEE",
+                    "engine_type": "FLEET",
                     "headers": {"foo": "string"},
                     "proxy": "proxy",
                     "screenshot": True,
@@ -59,7 +59,7 @@ class TestScrape:
     def test_raw_response_scrape_bulk(self, client: Cartography) -> None:
         response = client.scrape.with_raw_response.scrape_bulk(
             crawl_id="crawl-123",
-            engines=[{"engine_type": "SCRAPINGBEE"}],
+            engines=[{"engine_type": "FLEET"}],
             s3_bucket="my-scraping-bucket",
             urls=["https://example.com", "https://example.org"],
         )
@@ -74,7 +74,7 @@ class TestScrape:
     def test_streaming_response_scrape_bulk(self, client: Cartography) -> None:
         with client.scrape.with_streaming_response.scrape_bulk(
             crawl_id="crawl-123",
-            engines=[{"engine_type": "SCRAPINGBEE"}],
+            engines=[{"engine_type": "FLEET"}],
             s3_bucket="my-scraping-bucket",
             urls=["https://example.com", "https://example.org"],
         ) as response:
@@ -90,7 +90,7 @@ class TestScrape:
     @parametrize
     def test_method_scrape_single(self, client: Cartography) -> None:
         scrape = client.scrape.scrape_single(
-            engines=[{"engine_type": "SCRAPINGBEE"}],
+            engines=[{"engine_type": "FLEET"}],
             url="https://example.com",
         )
         assert_matches_type(ScrapeScrapeSingleResponse, scrape, path=["response"])
@@ -99,7 +99,7 @@ class TestScrape:
     @parametrize
     def test_raw_response_scrape_single(self, client: Cartography) -> None:
         response = client.scrape.with_raw_response.scrape_single(
-            engines=[{"engine_type": "SCRAPINGBEE"}],
+            engines=[{"engine_type": "FLEET"}],
             url="https://example.com",
         )
 
@@ -112,7 +112,7 @@ class TestScrape:
     @parametrize
     def test_streaming_response_scrape_single(self, client: Cartography) -> None:
         with client.scrape.with_streaming_response.scrape_single(
-            engines=[{"engine_type": "SCRAPINGBEE"}],
+            engines=[{"engine_type": "FLEET"}],
             url="https://example.com",
         ) as response:
             assert not response.is_closed
@@ -134,7 +134,7 @@ class TestAsyncScrape:
     async def test_method_scrape_bulk(self, async_client: AsyncCartography) -> None:
         scrape = await async_client.scrape.scrape_bulk(
             crawl_id="crawl-123",
-            engines=[{"engine_type": "SCRAPINGBEE"}],
+            engines=[{"engine_type": "FLEET"}],
             s3_bucket="my-scraping-bucket",
             urls=["https://example.com", "https://example.org"],
         )
@@ -147,7 +147,7 @@ class TestAsyncScrape:
             crawl_id="crawl-123",
             engines=[
                 {
-                    "engine_type": "SCRAPINGBEE",
+                    "engine_type": "FLEET",
                     "headers": {"foo": "string"},
                     "proxy": "proxy",
                     "screenshot": True,
@@ -168,7 +168,7 @@ class TestAsyncScrape:
     async def test_raw_response_scrape_bulk(self, async_client: AsyncCartography) -> None:
         response = await async_client.scrape.with_raw_response.scrape_bulk(
             crawl_id="crawl-123",
-            engines=[{"engine_type": "SCRAPINGBEE"}],
+            engines=[{"engine_type": "FLEET"}],
             s3_bucket="my-scraping-bucket",
             urls=["https://example.com", "https://example.org"],
         )
@@ -183,7 +183,7 @@ class TestAsyncScrape:
     async def test_streaming_response_scrape_bulk(self, async_client: AsyncCartography) -> None:
         async with async_client.scrape.with_streaming_response.scrape_bulk(
             crawl_id="crawl-123",
-            engines=[{"engine_type": "SCRAPINGBEE"}],
+            engines=[{"engine_type": "FLEET"}],
             s3_bucket="my-scraping-bucket",
             urls=["https://example.com", "https://example.org"],
         ) as response:
@@ -199,7 +199,7 @@ class TestAsyncScrape:
     @parametrize
     async def test_method_scrape_single(self, async_client: AsyncCartography) -> None:
         scrape = await async_client.scrape.scrape_single(
-            engines=[{"engine_type": "SCRAPINGBEE"}],
+            engines=[{"engine_type": "FLEET"}],
             url="https://example.com",
         )
         assert_matches_type(ScrapeScrapeSingleResponse, scrape, path=["response"])
@@ -208,7 +208,7 @@ class TestAsyncScrape:
     @parametrize
     async def test_raw_response_scrape_single(self, async_client: AsyncCartography) -> None:
         response = await async_client.scrape.with_raw_response.scrape_single(
-            engines=[{"engine_type": "SCRAPINGBEE"}],
+            engines=[{"engine_type": "FLEET"}],
             url="https://example.com",
         )
 
@@ -221,7 +221,7 @@ class TestAsyncScrape:
     @parametrize
     async def test_streaming_response_scrape_single(self, async_client: AsyncCartography) -> None:
         async with async_client.scrape.with_streaming_response.scrape_single(
-            engines=[{"engine_type": "SCRAPINGBEE"}],
+            engines=[{"engine_type": "FLEET"}],
             url="https://example.com",
         ) as response:
             assert not response.is_closed
