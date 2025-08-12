@@ -21,9 +21,9 @@ class TestCrawl:
     @parametrize
     def test_method_create_graph(self, client: Cartography) -> None:
         crawl = client.crawl.create_graph(
-            crawl_id="crawl-123",
-            engines=[{"engine_type": "bar"}],
-            s3_bucket="my-crawl-bucket",
+            crawl_id="crawl_id",
+            engines=["FLEET"],
+            s3_bucket="s3_bucket",
             url="https://example.com",
         )
         assert_matches_type(CrawlCreateGraphResponse, crawl, path=["response"])
@@ -32,16 +32,16 @@ class TestCrawl:
     @parametrize
     def test_method_create_graph_with_all_params(self, client: Cartography) -> None:
         crawl = client.crawl.create_graph(
-            crawl_id="crawl-123",
-            engines=[{"engine_type": "bar"}],
-            s3_bucket="my-crawl-bucket",
+            crawl_id="crawl_id",
+            engines=["FLEET"],
+            s3_bucket="s3_bucket",
             url="https://example.com",
             absolute_only=True,
             batch_size=1,
             debug=True,
-            depth=3,
+            depth=1,
             keep_external=True,
-            max_urls=500,
+            max_urls=1,
             max_workers=1,
             visit_external=True,
         )
@@ -51,9 +51,9 @@ class TestCrawl:
     @parametrize
     def test_raw_response_create_graph(self, client: Cartography) -> None:
         response = client.crawl.with_raw_response.create_graph(
-            crawl_id="crawl-123",
-            engines=[{"engine_type": "bar"}],
-            s3_bucket="my-crawl-bucket",
+            crawl_id="crawl_id",
+            engines=["FLEET"],
+            s3_bucket="s3_bucket",
             url="https://example.com",
         )
 
@@ -66,9 +66,9 @@ class TestCrawl:
     @parametrize
     def test_streaming_response_create_graph(self, client: Cartography) -> None:
         with client.crawl.with_streaming_response.create_graph(
-            crawl_id="crawl-123",
-            engines=[{"engine_type": "bar"}],
-            s3_bucket="my-crawl-bucket",
+            crawl_id="crawl_id",
+            engines=["FLEET"],
+            s3_bucket="s3_bucket",
             url="https://example.com",
         ) as response:
             assert not response.is_closed
@@ -89,9 +89,9 @@ class TestAsyncCrawl:
     @parametrize
     async def test_method_create_graph(self, async_client: AsyncCartography) -> None:
         crawl = await async_client.crawl.create_graph(
-            crawl_id="crawl-123",
-            engines=[{"engine_type": "bar"}],
-            s3_bucket="my-crawl-bucket",
+            crawl_id="crawl_id",
+            engines=["FLEET"],
+            s3_bucket="s3_bucket",
             url="https://example.com",
         )
         assert_matches_type(CrawlCreateGraphResponse, crawl, path=["response"])
@@ -100,16 +100,16 @@ class TestAsyncCrawl:
     @parametrize
     async def test_method_create_graph_with_all_params(self, async_client: AsyncCartography) -> None:
         crawl = await async_client.crawl.create_graph(
-            crawl_id="crawl-123",
-            engines=[{"engine_type": "bar"}],
-            s3_bucket="my-crawl-bucket",
+            crawl_id="crawl_id",
+            engines=["FLEET"],
+            s3_bucket="s3_bucket",
             url="https://example.com",
             absolute_only=True,
             batch_size=1,
             debug=True,
-            depth=3,
+            depth=1,
             keep_external=True,
-            max_urls=500,
+            max_urls=1,
             max_workers=1,
             visit_external=True,
         )
@@ -119,9 +119,9 @@ class TestAsyncCrawl:
     @parametrize
     async def test_raw_response_create_graph(self, async_client: AsyncCartography) -> None:
         response = await async_client.crawl.with_raw_response.create_graph(
-            crawl_id="crawl-123",
-            engines=[{"engine_type": "bar"}],
-            s3_bucket="my-crawl-bucket",
+            crawl_id="crawl_id",
+            engines=["FLEET"],
+            s3_bucket="s3_bucket",
             url="https://example.com",
         )
 
@@ -134,9 +134,9 @@ class TestAsyncCrawl:
     @parametrize
     async def test_streaming_response_create_graph(self, async_client: AsyncCartography) -> None:
         async with async_client.crawl.with_streaming_response.create_graph(
-            crawl_id="crawl-123",
-            engines=[{"engine_type": "bar"}],
-            s3_bucket="my-crawl-bucket",
+            crawl_id="crawl_id",
+            engines=["FLEET"],
+            s3_bucket="s3_bucket",
             url="https://example.com",
         ) as response:
             assert not response.is_closed

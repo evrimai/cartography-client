@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from typing import Dict, Iterable, Optional
+from typing import List, Optional
+from typing_extensions import Literal
 
 import httpx
 
@@ -47,7 +48,7 @@ class CrawlResource(SyncAPIResource):
         self,
         *,
         crawl_id: str,
-        engines: Iterable[Dict[str, object]],
+        engines: List[Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW"]],
         s3_bucket: str,
         url: str,
         absolute_only: bool | NotGiven = NOT_GIVEN,
@@ -157,7 +158,7 @@ class AsyncCrawlResource(AsyncAPIResource):
         self,
         *,
         crawl_id: str,
-        engines: Iterable[Dict[str, object]],
+        engines: List[Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW"]],
         s3_bucket: str,
         url: str,
         absolute_only: bool | NotGiven = NOT_GIVEN,
