@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from typing import Dict, Iterable, Optional
-from typing_extensions import Required, TypedDict
+from typing import List, Optional
+from typing_extensions import Literal, Required, TypedDict
 
 __all__ = ["CrawlCreateGraphParams"]
 
@@ -12,7 +12,7 @@ class CrawlCreateGraphParams(TypedDict, total=False):
     crawl_id: Required[str]
     """Unique identifier for this crawl"""
 
-    engines: Required[Iterable[Dict[str, object]]]
+    engines: Required[List[Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW"]]]
     """List of engines to use"""
 
     s3_bucket: Required[str]

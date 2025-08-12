@@ -26,7 +26,7 @@ class TestCrawl:
         crawl = client.workflows.request.crawl.create(
             bucket_name="bucket_name",
             crawl_id="crawl_id",
-            engines=[{"foo": "bar"}],
+            engines=["FLEET"],
             url="url",
         )
         assert_matches_type(WorkflowResult, crawl, path=["response"])
@@ -37,7 +37,7 @@ class TestCrawl:
         crawl = client.workflows.request.crawl.create(
             bucket_name="bucket_name",
             crawl_id="crawl_id",
-            engines=[{"foo": "bar"}],
+            engines=["FLEET"],
             url="url",
             absolute_only=True,
             batch_size=0,
@@ -55,7 +55,7 @@ class TestCrawl:
         response = client.workflows.request.crawl.with_raw_response.create(
             bucket_name="bucket_name",
             crawl_id="crawl_id",
-            engines=[{"foo": "bar"}],
+            engines=["FLEET"],
             url="url",
         )
 
@@ -70,7 +70,7 @@ class TestCrawl:
         with client.workflows.request.crawl.with_streaming_response.create(
             bucket_name="bucket_name",
             crawl_id="crawl_id",
-            engines=[{"foo": "bar"}],
+            engines=["FLEET"],
             url="url",
         ) as response:
             assert not response.is_closed
@@ -89,7 +89,7 @@ class TestCrawl:
                 {
                     "bucket_name": "bucket_name",
                     "crawl_id": "crawl_id",
-                    "engines": [{"foo": "bar"}],
+                    "engines": ["FLEET"],
                     "url": "url",
                 }
             ],
@@ -104,7 +104,7 @@ class TestCrawl:
                 {
                     "bucket_name": "bucket_name",
                     "crawl_id": "crawl_id",
-                    "engines": [{"foo": "bar"}],
+                    "engines": ["FLEET"],
                     "url": "url",
                 }
             ],
@@ -123,7 +123,7 @@ class TestCrawl:
                 {
                     "bucket_name": "bucket_name",
                     "crawl_id": "crawl_id",
-                    "engines": [{"foo": "bar"}],
+                    "engines": ["FLEET"],
                     "url": "url",
                 }
             ],
@@ -148,7 +148,7 @@ class TestAsyncCrawl:
         crawl = await async_client.workflows.request.crawl.create(
             bucket_name="bucket_name",
             crawl_id="crawl_id",
-            engines=[{"foo": "bar"}],
+            engines=["FLEET"],
             url="url",
         )
         assert_matches_type(WorkflowResult, crawl, path=["response"])
@@ -159,7 +159,7 @@ class TestAsyncCrawl:
         crawl = await async_client.workflows.request.crawl.create(
             bucket_name="bucket_name",
             crawl_id="crawl_id",
-            engines=[{"foo": "bar"}],
+            engines=["FLEET"],
             url="url",
             absolute_only=True,
             batch_size=0,
@@ -177,7 +177,7 @@ class TestAsyncCrawl:
         response = await async_client.workflows.request.crawl.with_raw_response.create(
             bucket_name="bucket_name",
             crawl_id="crawl_id",
-            engines=[{"foo": "bar"}],
+            engines=["FLEET"],
             url="url",
         )
 
@@ -192,7 +192,7 @@ class TestAsyncCrawl:
         async with async_client.workflows.request.crawl.with_streaming_response.create(
             bucket_name="bucket_name",
             crawl_id="crawl_id",
-            engines=[{"foo": "bar"}],
+            engines=["FLEET"],
             url="url",
         ) as response:
             assert not response.is_closed
@@ -211,7 +211,7 @@ class TestAsyncCrawl:
                 {
                     "bucket_name": "bucket_name",
                     "crawl_id": "crawl_id",
-                    "engines": [{"foo": "bar"}],
+                    "engines": ["FLEET"],
                     "url": "url",
                 }
             ],
@@ -226,7 +226,7 @@ class TestAsyncCrawl:
                 {
                     "bucket_name": "bucket_name",
                     "crawl_id": "crawl_id",
-                    "engines": [{"foo": "bar"}],
+                    "engines": ["FLEET"],
                     "url": "url",
                 }
             ],
@@ -245,7 +245,7 @@ class TestAsyncCrawl:
                 {
                     "bucket_name": "bucket_name",
                     "crawl_id": "crawl_id",
-                    "engines": [{"foo": "bar"}],
+                    "engines": ["FLEET"],
                     "url": "url",
                 }
             ],

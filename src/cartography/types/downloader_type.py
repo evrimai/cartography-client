@@ -4,4 +4,4 @@ from typing_extensions import Literal, TypeAlias
 
 __all__ = ["DownloaderType"]
 
-DownloaderType: TypeAlias = Literal["async_fleet"]
+DownloaderType: TypeAlias = Literal["FLEET_ASYNC"]

@@ -39,7 +39,7 @@ class TestDownload:
             urls=["https://example.com/file1.pdf", "https://example.com/file2.pdf"],
             batch_size=1,
             debug=True,
-            downloader_type="async_fleet",
+            downloader_type="FLEET_ASYNC",
             max_workers=8,
             wait_until="commit",
         )
@@ -90,7 +90,7 @@ class TestDownload:
         download = client.download.create_single(
             s3_bucket="my-downloads",
             url="https://example.com/file.pdf",
-            downloader_type="async_fleet",
+            downloader_type="FLEET_ASYNC",
             s3_key="s3_key",
             api_timeout=1000,
             wait_until="load",
@@ -150,7 +150,7 @@ class TestAsyncDownload:
             urls=["https://example.com/file1.pdf", "https://example.com/file2.pdf"],
             batch_size=1,
             debug=True,
-            downloader_type="async_fleet",
+            downloader_type="FLEET_ASYNC",
             max_workers=8,
             wait_until="commit",
         )
@@ -201,7 +201,7 @@ class TestAsyncDownload:
         download = await async_client.download.create_single(
             s3_bucket="my-downloads",
             url="https://example.com/file.pdf",
-            downloader_type="async_fleet",
+            downloader_type="FLEET_ASYNC",
             s3_key="s3_key",
             api_timeout=1000,
             wait_until="load",
