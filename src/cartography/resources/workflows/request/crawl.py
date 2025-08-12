@@ -116,7 +116,7 @@ class CrawlResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> CrawlCreateBulkResponse:
         """
-        Make bulk requests to temporal worker based on the number of URLs
+        Make up to 50 requests to temporal crawl worker
 
         Args:
           extra_headers: Send extra headers
@@ -227,7 +227,7 @@ class AsyncCrawlResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> CrawlCreateBulkResponse:
         """
-        Make bulk requests to temporal worker based on the number of URLs
+        Make up to 50 requests to temporal crawl worker
 
         Args:
           extra_headers: Send extra headers
