@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestDownload:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create_bulk(self, client: Cartography) -> None:
         download = client.download.create_bulk(
@@ -30,7 +30,7 @@ class TestDownload:
         )
         assert_matches_type(DownloadCreateBulkResponse, download, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create_bulk_with_all_params(self, client: Cartography) -> None:
         download = client.download.create_bulk(
@@ -45,7 +45,7 @@ class TestDownload:
         )
         assert_matches_type(DownloadCreateBulkResponse, download, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_create_bulk(self, client: Cartography) -> None:
         response = client.download.with_raw_response.create_bulk(
@@ -59,7 +59,7 @@ class TestDownload:
         download = response.parse()
         assert_matches_type(DownloadCreateBulkResponse, download, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_create_bulk(self, client: Cartography) -> None:
         with client.download.with_streaming_response.create_bulk(
@@ -75,7 +75,7 @@ class TestDownload:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create_single(self, client: Cartography) -> None:
         download = client.download.create_single(
@@ -84,7 +84,7 @@ class TestDownload:
         )
         assert_matches_type(DownloadCreateSingleResponse, download, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create_single_with_all_params(self, client: Cartography) -> None:
         download = client.download.create_single(
@@ -97,7 +97,7 @@ class TestDownload:
         )
         assert_matches_type(DownloadCreateSingleResponse, download, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_create_single(self, client: Cartography) -> None:
         response = client.download.with_raw_response.create_single(
@@ -110,7 +110,7 @@ class TestDownload:
         download = response.parse()
         assert_matches_type(DownloadCreateSingleResponse, download, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_create_single(self, client: Cartography) -> None:
         with client.download.with_streaming_response.create_single(
@@ -131,7 +131,7 @@ class TestAsyncDownload:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create_bulk(self, async_client: AsyncCartography) -> None:
         download = await async_client.download.create_bulk(
@@ -141,7 +141,7 @@ class TestAsyncDownload:
         )
         assert_matches_type(DownloadCreateBulkResponse, download, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create_bulk_with_all_params(self, async_client: AsyncCartography) -> None:
         download = await async_client.download.create_bulk(
@@ -156,7 +156,7 @@ class TestAsyncDownload:
         )
         assert_matches_type(DownloadCreateBulkResponse, download, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_create_bulk(self, async_client: AsyncCartography) -> None:
         response = await async_client.download.with_raw_response.create_bulk(
@@ -170,7 +170,7 @@ class TestAsyncDownload:
         download = await response.parse()
         assert_matches_type(DownloadCreateBulkResponse, download, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_create_bulk(self, async_client: AsyncCartography) -> None:
         async with async_client.download.with_streaming_response.create_bulk(
@@ -186,7 +186,7 @@ class TestAsyncDownload:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create_single(self, async_client: AsyncCartography) -> None:
         download = await async_client.download.create_single(
@@ -195,7 +195,7 @@ class TestAsyncDownload:
         )
         assert_matches_type(DownloadCreateSingleResponse, download, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create_single_with_all_params(self, async_client: AsyncCartography) -> None:
         download = await async_client.download.create_single(
@@ -208,7 +208,7 @@ class TestAsyncDownload:
         )
         assert_matches_type(DownloadCreateSingleResponse, download, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_create_single(self, async_client: AsyncCartography) -> None:
         response = await async_client.download.with_raw_response.create_single(
@@ -221,7 +221,7 @@ class TestAsyncDownload:
         download = await response.parse()
         assert_matches_type(DownloadCreateSingleResponse, download, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_create_single(self, async_client: AsyncCartography) -> None:
         async with async_client.download.with_streaming_response.create_single(
