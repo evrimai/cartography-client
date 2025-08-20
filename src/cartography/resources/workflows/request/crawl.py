@@ -59,6 +59,7 @@ class CrawlResource(SyncAPIResource):
         keep_external: bool | NotGiven = NOT_GIVEN,
         max_urls: int | NotGiven = NOT_GIVEN,
         max_workers: int | NotGiven = NOT_GIVEN,
+        stealth: bool | NotGiven = NOT_GIVEN,
         visit_external: bool | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -94,6 +95,7 @@ class CrawlResource(SyncAPIResource):
                     "keep_external": keep_external,
                     "max_urls": max_urls,
                     "max_workers": max_workers,
+                    "stealth": stealth,
                     "visit_external": visit_external,
                 },
                 crawl_create_params.CrawlCreateParams,
@@ -170,6 +172,7 @@ class AsyncCrawlResource(AsyncAPIResource):
         keep_external: bool | NotGiven = NOT_GIVEN,
         max_urls: int | NotGiven = NOT_GIVEN,
         max_workers: int | NotGiven = NOT_GIVEN,
+        stealth: bool | NotGiven = NOT_GIVEN,
         visit_external: bool | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -205,6 +208,7 @@ class AsyncCrawlResource(AsyncAPIResource):
                     "keep_external": keep_external,
                     "max_urls": max_urls,
                     "max_workers": max_workers,
+                    "stealth": stealth,
                     "visit_external": visit_external,
                 },
                 crawl_create_params.CrawlCreateParams,
