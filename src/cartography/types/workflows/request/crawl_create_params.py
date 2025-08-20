@@ -29,4 +29,6 @@ class CrawlCreateParams(TypedDict, total=False):
 
     max_workers: int
 
+    stealth: bool
+
     visit_external: bool

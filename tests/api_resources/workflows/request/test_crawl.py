@@ -45,6 +45,7 @@ class TestCrawl:
             keep_external=True,
             max_urls=0,
             max_workers=0,
+            stealth=True,
             visit_external=True,
         )
         assert_matches_type(WorkflowResult, crawl, path=["response"])
@@ -167,6 +168,7 @@ class TestAsyncCrawl:
             keep_external=True,
             max_urls=0,
             max_workers=0,
+            stealth=True,
             visit_external=True,
         )
         assert_matches_type(WorkflowResult, crawl, path=["response"])
