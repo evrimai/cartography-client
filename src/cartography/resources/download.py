@@ -122,7 +122,7 @@ class DownloadResource(SyncAPIResource):
         url: str,
         downloader_type: DownloaderType | NotGiven = NOT_GIVEN,
         s3_key: Optional[str] | NotGiven = NOT_GIVEN,
-        api_timeout: int | NotGiven = NOT_GIVEN,
+        timeout_ms: int | NotGiven = NOT_GIVEN,
         wait_until: WaitUntil | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -145,7 +145,7 @@ class DownloadResource(SyncAPIResource):
 
           s3_key: S3 key for the file
 
-          api_timeout: Timeout in milliseconds
+          timeout_ms: Timeout in milliseconds
 
           wait_until: When to consider download complete
 
@@ -165,7 +165,7 @@ class DownloadResource(SyncAPIResource):
                     "url": url,
                     "downloader_type": downloader_type,
                     "s3_key": s3_key,
-                    "api_timeout": api_timeout,
+                    "timeout_ms": timeout_ms,
                     "wait_until": wait_until,
                 },
                 download_create_single_params.DownloadCreateSingleParams,
@@ -273,7 +273,7 @@ class AsyncDownloadResource(AsyncAPIResource):
         url: str,
         downloader_type: DownloaderType | NotGiven = NOT_GIVEN,
         s3_key: Optional[str] | NotGiven = NOT_GIVEN,
-        api_timeout: int | NotGiven = NOT_GIVEN,
+        timeout_ms: int | NotGiven = NOT_GIVEN,
         wait_until: WaitUntil | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -296,7 +296,7 @@ class AsyncDownloadResource(AsyncAPIResource):
 
           s3_key: S3 key for the file
 
-          api_timeout: Timeout in milliseconds
+          timeout_ms: Timeout in milliseconds
 
           wait_until: When to consider download complete
 
@@ -316,7 +316,7 @@ class AsyncDownloadResource(AsyncAPIResource):
                     "url": url,
                     "downloader_type": downloader_type,
                     "s3_key": s3_key,
-                    "api_timeout": api_timeout,
+                    "timeout_ms": timeout_ms,
                     "wait_until": wait_until,
                 },
                 download_create_single_params.DownloadCreateSingleParams,

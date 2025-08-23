@@ -92,7 +92,7 @@ class TestDownload:
             url="https://example.com/file.pdf",
             downloader_type="FLEET_ASYNC",
             s3_key="s3_key",
-            api_timeout=1000,
+            timeout_ms=1000,
             wait_until="load",
         )
         assert_matches_type(DownloadCreateSingleResponse, download, path=["response"])
@@ -203,7 +203,7 @@ class TestAsyncDownload:
             url="https://example.com/file.pdf",
             downloader_type="FLEET_ASYNC",
             s3_key="s3_key",
-            api_timeout=1000,
+            timeout_ms=1000,
             wait_until="load",
         )
         assert_matches_type(DownloadCreateSingleResponse, download, path=["response"])
