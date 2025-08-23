@@ -3,9 +3,8 @@
 from __future__ import annotations
 
 from typing import Optional
-from typing_extensions import Required, Annotated, TypedDict
+from typing_extensions import Required, TypedDict
 
-from .._utils import PropertyInfo
 from .wait_until import WaitUntil
 from .downloader_type import DownloaderType
 
@@ -25,7 +24,7 @@ class DownloadCreateSingleParams(TypedDict, total=False):
     s3_key: Optional[str]
     """S3 key for the file"""
 
-    api_timeout: Annotated[int, PropertyInfo(alias="timeout")]
+    timeout_ms: int
     """Timeout in milliseconds"""
 
     wait_until: WaitUntil
