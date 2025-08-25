@@ -21,6 +21,8 @@ class CrawlCreateParams(TypedDict, total=False):
 
     batch_size: int
 
+    camo: bool
+
     depth: int
 
     keep_external: bool
