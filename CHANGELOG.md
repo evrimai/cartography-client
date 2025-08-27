@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.8.1 (2025-08-27)
+
+Full Changelog: [v0.8.0...v0.8.1](https://github.com/evrimai/cartography-client/compare/v0.8.0...v0.8.1)
+
+### Bug Fixes
+
+* avoid newer type syntax ([2b4c710](https://github.com/evrimai/cartography-client/commit/2b4c710297b5d4b7f233c7e868933d508f47afa2))
+
+
+### Chores
+
+* **internal:** change ci workflow machines ([b1b2d68](https://github.com/evrimai/cartography-client/commit/b1b2d68da44ce55d83cf66a32c01cbc141d5c5fd))
+
 ## 0.8.0 (2025-08-25)
 
 Full Changelog: [v0.7.0...v0.8.0](https://github.com/evrimai/cartography-client/compare/v0.7.0...v0.8.0)
