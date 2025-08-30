@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.8.2 (2025-08-30)
+
+Full Changelog: [v0.8.1...v0.8.2](https://github.com/evrimai/cartography-client/compare/v0.8.1...v0.8.2)
+
+### Chores
+
+* **internal:** add Sequence related utils ([f8bc56f](https://github.com/evrimai/cartography-client/commit/f8bc56f11eee087e94fa809619d1ed99686376f6))
+* **internal:** update pyright exclude list ([7c58f1b](https://github.com/evrimai/cartography-client/commit/7c58f1b8a9657a72b66d1d44a7de96deb333a132))
+
 ## 0.8.1 (2025-08-27)
 
 Full Changelog: [v0.8.0...v0.8.1](https://github.com/evrimai/cartography-client/compare/v0.8.0...v0.8.1)
