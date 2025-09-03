@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
-from typing import List
 from typing_extensions import Required, TypedDict
+
+from ..._types import SequenceNotStr
 
 __all__ = ["RequestCreateDownloadParams"]
 
@@ -15,4 +16,4 @@ class RequestCreateDownloadParams(TypedDict, total=False):
 
     downloader_type: Required[str]
 
-    urls: Required[List[str]]
+    urls: Required[SequenceNotStr[str]]
