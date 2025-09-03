@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
-from typing import List, Optional
+from typing import Optional
 
 import httpx
 
 from ..types import WaitUntil, DownloaderType, download_create_bulk_params, download_create_single_params
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven, SequenceNotStr
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -51,7 +51,7 @@ class DownloadResource(SyncAPIResource):
         *,
         crawl_id: str,
         s3_bucket: str,
-        urls: List[str],
+        urls: SequenceNotStr[str],
         batch_size: int | NotGiven = NOT_GIVEN,
         debug: bool | NotGiven = NOT_GIVEN,
         downloader_type: DownloaderType | NotGiven = NOT_GIVEN,
@@ -202,7 +202,7 @@ class AsyncDownloadResource(AsyncAPIResource):
         *,
         crawl_id: str,
         s3_bucket: str,
-        urls: List[str],
+        urls: SequenceNotStr[str],
         batch_size: int | NotGiven = NOT_GIVEN,
         debug: bool | NotGiven = NOT_GIVEN,
         downloader_type: DownloaderType | NotGiven = NOT_GIVEN,

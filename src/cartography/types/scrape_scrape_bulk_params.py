@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
-from typing import List, Iterable
+from typing import Iterable
 from typing_extensions import Required, TypedDict
 
+from .._types import SequenceNotStr
 from .scrape_engine_param import ScrapeEngineParam
 
 __all__ = ["ScrapeScrapeBulkParams"]
@@ -20,7 +21,7 @@ class ScrapeScrapeBulkParams(TypedDict, total=False):
     s3_bucket: Required[str]
     """S3 bucket for checkpointing"""
 
-    urls: Required[List[str]]
+    urls: Required[SequenceNotStr[str]]
     """List of URLs to scrape"""
 
     batch_size: int
