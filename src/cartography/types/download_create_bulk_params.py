@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from typing import List
 from typing_extensions import Required, TypedDict
 
+from .._types import SequenceNotStr
 from .wait_until import WaitUntil
 from .downloader_type import DownloaderType
 
@@ -18,7 +18,7 @@ class DownloadCreateBulkParams(TypedDict, total=False):
     s3_bucket: Required[str]
     """S3 bucket for storage and checkpoints"""
 
-    urls: Required[List[str]]
+    urls: Required[SequenceNotStr[str]]
     """List of URLs to download"""
 
     batch_size: int
