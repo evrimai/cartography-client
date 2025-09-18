@@ -48,7 +48,9 @@ class CrawlResource(SyncAPIResource):
         self,
         *,
         crawl_id: str,
-        engines: List[Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW"]],
+        engines: List[
+            Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]
+        ],
         s3_bucket: str,
         url: str,
         absolute_only: bool | NotGiven = NOT_GIVEN,
@@ -158,7 +160,9 @@ class AsyncCrawlResource(AsyncAPIResource):
         self,
         *,
         crawl_id: str,
-        engines: List[Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW"]],
+        engines: List[
+            Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]
+        ],
         s3_bucket: str,
         url: str,
         absolute_only: bool | NotGiven = NOT_GIVEN,

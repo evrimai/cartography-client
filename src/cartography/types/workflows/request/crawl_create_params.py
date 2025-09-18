@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import List
+from typing import List, Optional
 from typing_extensions import Literal, Required, TypedDict
 
 __all__ = ["CrawlCreateParams"]
@@ -13,11 +13,15 @@ class CrawlCreateParams(TypedDict, total=False):
 
     crawl_id: Required[str]
 
-    engines: Required[List[Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW"]]]
+    engines: Required[
+        List[Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]]
+    ]
 
     url: Required[str]
 
     absolute_only: bool
+
+    agentic: bool
 
     batch_size: int
 
@@ -31,6 +35,12 @@ class CrawlCreateParams(TypedDict, total=False):
 
     max_workers: int
 
+    proxy_url: Optional[str]
+
+    session_id: Optional[str]
+
     stealth: bool
+
+    teardown: bool
 
     visit_external: bool

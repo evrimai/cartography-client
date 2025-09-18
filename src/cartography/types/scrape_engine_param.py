@@ -9,7 +9,9 @@ __all__ = ["ScrapeEngineParam"]
 
 
 class ScrapeEngineParam(TypedDict, total=False):
-    engine_type: Required[Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW"]]
+    engine_type: Required[
+        Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]
+    ]
 
     headers: Optional[Dict[str, str]]
     """Custom headers"""

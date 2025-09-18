@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import List, Iterable
+from typing import List, Iterable, Optional
 from typing_extensions import Literal
 
 import httpx
@@ -51,16 +51,22 @@ class CrawlResource(SyncAPIResource):
         *,
         bucket_name: str,
         crawl_id: str,
-        engines: List[Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW"]],
+        engines: List[
+            Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]
+        ],
         url: str,
         absolute_only: bool | NotGiven = NOT_GIVEN,
+        agentic: bool | NotGiven = NOT_GIVEN,
         batch_size: int | NotGiven = NOT_GIVEN,
         camo: bool | NotGiven = NOT_GIVEN,
         depth: int | NotGiven = NOT_GIVEN,
         keep_external: bool | NotGiven = NOT_GIVEN,
         max_urls: int | NotGiven = NOT_GIVEN,
         max_workers: int | NotGiven = NOT_GIVEN,
+        proxy_url: Optional[str] | NotGiven = NOT_GIVEN,
+        session_id: Optional[str] | NotGiven = NOT_GIVEN,
         stealth: bool | NotGiven = NOT_GIVEN,
+        teardown: bool | NotGiven = NOT_GIVEN,
         visit_external: bool | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -91,13 +97,17 @@ class CrawlResource(SyncAPIResource):
                     "engines": engines,
                     "url": url,
                     "absolute_only": absolute_only,
+                    "agentic": agentic,
                     "batch_size": batch_size,
                     "camo": camo,
                     "depth": depth,
                     "keep_external": keep_external,
                     "max_urls": max_urls,
                     "max_workers": max_workers,
+                    "proxy_url": proxy_url,
+                    "session_id": session_id,
                     "stealth": stealth,
+                    "teardown": teardown,
                     "visit_external": visit_external,
                 },
                 crawl_create_params.CrawlCreateParams,
@@ -166,16 +176,22 @@ class AsyncCrawlResource(AsyncAPIResource):
         *,
         bucket_name: str,
         crawl_id: str,
-        engines: List[Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW"]],
+        engines: List[
+            Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]
+        ],
         url: str,
         absolute_only: bool | NotGiven = NOT_GIVEN,
+        agentic: bool | NotGiven = NOT_GIVEN,
         batch_size: int | NotGiven = NOT_GIVEN,
         camo: bool | NotGiven = NOT_GIVEN,
         depth: int | NotGiven = NOT_GIVEN,
         keep_external: bool | NotGiven = NOT_GIVEN,
         max_urls: int | NotGiven = NOT_GIVEN,
         max_workers: int | NotGiven = NOT_GIVEN,
+        proxy_url: Optional[str] | NotGiven = NOT_GIVEN,
+        session_id: Optional[str] | NotGiven = NOT_GIVEN,
         stealth: bool | NotGiven = NOT_GIVEN,
+        teardown: bool | NotGiven = NOT_GIVEN,
         visit_external: bool | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
@@ -206,13 +222,17 @@ class AsyncCrawlResource(AsyncAPIResource):
                     "engines": engines,
                     "url": url,
                     "absolute_only": absolute_only,
+                    "agentic": agentic,
                     "batch_size": batch_size,
                     "camo": camo,
                     "depth": depth,
                     "keep_external": keep_external,
                     "max_urls": max_urls,
                     "max_workers": max_workers,
+                    "proxy_url": proxy_url,
+                    "session_id": session_id,
                     "stealth": stealth,
+                    "teardown": teardown,
                     "visit_external": visit_external,
                 },
                 crawl_create_params.CrawlCreateParams,
