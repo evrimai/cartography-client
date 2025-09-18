@@ -12,7 +12,9 @@ class CrawlCreateGraphParams(TypedDict, total=False):
     crawl_id: Required[str]
     """Unique identifier for this crawl"""
 
-    engines: Required[List[Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW"]]]
+    engines: Required[
+        List[Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]]
+    ]
     """List of engines to use"""
 
     s3_bucket: Required[str]
