@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.9.0 (2025-09-19)
+
+Full Changelog: [v0.8.1...v0.9.0](https://github.com/evrimai/cartography-client/compare/v0.8.1...v0.9.0)
+
+### Features
+
+* **api:** api update ([9a480f9](https://github.com/evrimai/cartography-client/commit/9a480f9ae3e1740836587c43321ab86e37102b69))
+* improve future compat with pydantic v3 ([c85338d](https://github.com/evrimai/cartography-client/commit/c85338d505acb8984563bd8211097ffd85fbfaad))
+* **types:** replace List[str] with SequenceNotStr in params ([8a84b9c](https://github.com/evrimai/cartography-client/commit/8a84b9ca21a7e04cd703d72b67b0b4361ee43474))
+
+
+### Chores
+
+* **internal:** add Sequence related utils ([f8bc56f](https://github.com/evrimai/cartography-client/commit/f8bc56f11eee087e94fa809619d1ed99686376f6))
+* **internal:** move mypy configurations to `pyproject.toml` file ([8316eef](https://github.com/evrimai/cartography-client/commit/8316eef3600753d76d18ba9901aef5db73c9e318))
+* **internal:** update pydantic dependency ([7e7996b](https://github.com/evrimai/cartography-client/commit/7e7996be107571e0b6f73c7adda69bb69011bdfe))
+* **internal:** update pyright exclude list ([7c58f1b](https://github.com/evrimai/cartography-client/commit/7c58f1b8a9657a72b66d1d44a7de96deb333a132))
+* **tests:** simplify `get_platform` test ([37a131e](https://github.com/evrimai/cartography-client/commit/37a131ec48cc3a08e024789bb68e4ad0d829c690))
+* **types:** change optional parameter type from NotGiven to Omit ([a3fe03d](https://github.com/evrimai/cartography-client/commit/a3fe03da7fd242b930beeb2d41f0b34bc19c7749))
+
 ## 0.8.1 (2025-08-27)
 
 Full Changelog: [v0.8.0...v0.8.1](https://github.com/evrimai/cartography-client/compare/v0.8.0...v0.8.1)
