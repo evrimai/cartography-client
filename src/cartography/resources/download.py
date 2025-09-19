@@ -7,7 +7,7 @@ from typing import Optional
 import httpx
 
 from ..types import WaitUntil, DownloaderType, download_create_bulk_params, download_create_single_params
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven, SequenceNotStr
+from .._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -52,17 +52,17 @@ class DownloadResource(SyncAPIResource):
         crawl_id: str,
         s3_bucket: str,
         urls: SequenceNotStr[str],
-        batch_size: int | NotGiven = NOT_GIVEN,
-        debug: bool | NotGiven = NOT_GIVEN,
-        downloader_type: DownloaderType | NotGiven = NOT_GIVEN,
-        max_workers: int | NotGiven = NOT_GIVEN,
-        wait_until: WaitUntil | NotGiven = NOT_GIVEN,
+        batch_size: int | Omit = omit,
+        debug: bool | Omit = omit,
+        downloader_type: DownloaderType | Omit = omit,
+        max_workers: int | Omit = omit,
+        wait_until: WaitUntil | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> DownloadCreateBulkResponse:
         """
         Bulk download multiple files with checkpointing to S3
@@ -120,16 +120,16 @@ class DownloadResource(SyncAPIResource):
         *,
         s3_bucket: str,
         url: str,
-        downloader_type: DownloaderType | NotGiven = NOT_GIVEN,
-        s3_key: Optional[str] | NotGiven = NOT_GIVEN,
-        timeout_ms: int | NotGiven = NOT_GIVEN,
-        wait_until: WaitUntil | NotGiven = NOT_GIVEN,
+        downloader_type: DownloaderType | Omit = omit,
+        s3_key: Optional[str] | Omit = omit,
+        timeout_ms: int | Omit = omit,
+        wait_until: WaitUntil | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> DownloadCreateSingleResponse:
         """
         Download a single file to S3
@@ -203,17 +203,17 @@ class AsyncDownloadResource(AsyncAPIResource):
         crawl_id: str,
         s3_bucket: str,
         urls: SequenceNotStr[str],
-        batch_size: int | NotGiven = NOT_GIVEN,
-        debug: bool | NotGiven = NOT_GIVEN,
-        downloader_type: DownloaderType | NotGiven = NOT_GIVEN,
-        max_workers: int | NotGiven = NOT_GIVEN,
-        wait_until: WaitUntil | NotGiven = NOT_GIVEN,
+        batch_size: int | Omit = omit,
+        debug: bool | Omit = omit,
+        downloader_type: DownloaderType | Omit = omit,
+        max_workers: int | Omit = omit,
+        wait_until: WaitUntil | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> DownloadCreateBulkResponse:
         """
         Bulk download multiple files with checkpointing to S3
@@ -271,16 +271,16 @@ class AsyncDownloadResource(AsyncAPIResource):
         *,
         s3_bucket: str,
         url: str,
-        downloader_type: DownloaderType | NotGiven = NOT_GIVEN,
-        s3_key: Optional[str] | NotGiven = NOT_GIVEN,
-        timeout_ms: int | NotGiven = NOT_GIVEN,
-        wait_until: WaitUntil | NotGiven = NOT_GIVEN,
+        downloader_type: DownloaderType | Omit = omit,
+        s3_key: Optional[str] | Omit = omit,
+        timeout_ms: int | Omit = omit,
+        wait_until: WaitUntil | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> DownloadCreateSingleResponse:
         """
         Download a single file to S3

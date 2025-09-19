@@ -8,7 +8,7 @@ from typing_extensions import Literal
 import httpx
 
 from ..types import crawl_create_graph_params
-from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
@@ -53,20 +53,20 @@ class CrawlResource(SyncAPIResource):
         ],
         s3_bucket: str,
         url: str,
-        absolute_only: bool | NotGiven = NOT_GIVEN,
-        batch_size: int | NotGiven = NOT_GIVEN,
-        debug: bool | NotGiven = NOT_GIVEN,
-        depth: Optional[int] | NotGiven = NOT_GIVEN,
-        keep_external: bool | NotGiven = NOT_GIVEN,
-        max_urls: int | NotGiven = NOT_GIVEN,
-        max_workers: int | NotGiven = NOT_GIVEN,
-        visit_external: bool | NotGiven = NOT_GIVEN,
+        absolute_only: bool | Omit = omit,
+        batch_size: int | Omit = omit,
+        debug: bool | Omit = omit,
+        depth: Optional[int] | Omit = omit,
+        keep_external: bool | Omit = omit,
+        max_urls: int | Omit = omit,
+        max_workers: int | Omit = omit,
+        visit_external: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CrawlCreateGraphResponse:
         """
         Create a crawl graph by recursively crawling from a root URL
@@ -165,20 +165,20 @@ class AsyncCrawlResource(AsyncAPIResource):
         ],
         s3_bucket: str,
         url: str,
-        absolute_only: bool | NotGiven = NOT_GIVEN,
-        batch_size: int | NotGiven = NOT_GIVEN,
-        debug: bool | NotGiven = NOT_GIVEN,
-        depth: Optional[int] | NotGiven = NOT_GIVEN,
-        keep_external: bool | NotGiven = NOT_GIVEN,
-        max_urls: int | NotGiven = NOT_GIVEN,
-        max_workers: int | NotGiven = NOT_GIVEN,
-        visit_external: bool | NotGiven = NOT_GIVEN,
+        absolute_only: bool | Omit = omit,
+        batch_size: int | Omit = omit,
+        debug: bool | Omit = omit,
+        depth: Optional[int] | Omit = omit,
+        keep_external: bool | Omit = omit,
+        max_urls: int | Omit = omit,
+        max_workers: int | Omit = omit,
+        visit_external: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CrawlCreateGraphResponse:
         """
         Create a crawl graph by recursively crawling from a root URL
