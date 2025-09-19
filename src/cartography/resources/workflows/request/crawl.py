@@ -7,7 +7,7 @@ from typing_extensions import Literal
 
 import httpx
 
-from ...._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from ...._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
 from ...._utils import maybe_transform, async_maybe_transform
 from ...._compat import cached_property
 from ...._resource import SyncAPIResource, AsyncAPIResource
@@ -55,25 +55,25 @@ class CrawlResource(SyncAPIResource):
             Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]
         ],
         url: str,
-        absolute_only: bool | NotGiven = NOT_GIVEN,
-        agentic: bool | NotGiven = NOT_GIVEN,
-        batch_size: int | NotGiven = NOT_GIVEN,
-        camo: bool | NotGiven = NOT_GIVEN,
-        depth: int | NotGiven = NOT_GIVEN,
-        keep_external: bool | NotGiven = NOT_GIVEN,
-        max_urls: int | NotGiven = NOT_GIVEN,
-        max_workers: int | NotGiven = NOT_GIVEN,
-        proxy_url: Optional[str] | NotGiven = NOT_GIVEN,
-        session_id: Optional[str] | NotGiven = NOT_GIVEN,
-        stealth: bool | NotGiven = NOT_GIVEN,
-        teardown: bool | NotGiven = NOT_GIVEN,
-        visit_external: bool | NotGiven = NOT_GIVEN,
+        absolute_only: bool | Omit = omit,
+        agentic: bool | Omit = omit,
+        batch_size: int | Omit = omit,
+        camo: bool | Omit = omit,
+        depth: int | Omit = omit,
+        keep_external: bool | Omit = omit,
+        max_urls: int | Omit = omit,
+        max_workers: int | Omit = omit,
+        proxy_url: Optional[str] | Omit = omit,
+        session_id: Optional[str] | Omit = omit,
+        stealth: bool | Omit = omit,
+        teardown: bool | Omit = omit,
+        visit_external: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> WorkflowResult:
         """
         Make a request to temporal worker :param request: crawl request data :param
@@ -127,7 +127,7 @@ class CrawlResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CrawlCreateBulkResponse:
         """
         Make up to 50 requests to temporal crawl worker
@@ -180,25 +180,25 @@ class AsyncCrawlResource(AsyncAPIResource):
             Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]
         ],
         url: str,
-        absolute_only: bool | NotGiven = NOT_GIVEN,
-        agentic: bool | NotGiven = NOT_GIVEN,
-        batch_size: int | NotGiven = NOT_GIVEN,
-        camo: bool | NotGiven = NOT_GIVEN,
-        depth: int | NotGiven = NOT_GIVEN,
-        keep_external: bool | NotGiven = NOT_GIVEN,
-        max_urls: int | NotGiven = NOT_GIVEN,
-        max_workers: int | NotGiven = NOT_GIVEN,
-        proxy_url: Optional[str] | NotGiven = NOT_GIVEN,
-        session_id: Optional[str] | NotGiven = NOT_GIVEN,
-        stealth: bool | NotGiven = NOT_GIVEN,
-        teardown: bool | NotGiven = NOT_GIVEN,
-        visit_external: bool | NotGiven = NOT_GIVEN,
+        absolute_only: bool | Omit = omit,
+        agentic: bool | Omit = omit,
+        batch_size: int | Omit = omit,
+        camo: bool | Omit = omit,
+        depth: int | Omit = omit,
+        keep_external: bool | Omit = omit,
+        max_urls: int | Omit = omit,
+        max_workers: int | Omit = omit,
+        proxy_url: Optional[str] | Omit = omit,
+        session_id: Optional[str] | Omit = omit,
+        stealth: bool | Omit = omit,
+        teardown: bool | Omit = omit,
+        visit_external: bool | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> WorkflowResult:
         """
         Make a request to temporal worker :param request: crawl request data :param
@@ -252,7 +252,7 @@ class AsyncCrawlResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> CrawlCreateBulkResponse:
         """
         Make up to 50 requests to temporal crawl worker
