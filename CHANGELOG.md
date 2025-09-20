@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.1 (2025-09-20)
+
+Full Changelog: [v0.9.0...v0.9.1](https://github.com/evrimai/cartography-client/compare/v0.9.0...v0.9.1)
+
+### Chores
+
+* do not install brew dependencies in ./scripts/bootstrap by default ([95b877d](https://github.com/evrimai/cartography-client/commit/95b877d88330c2e1d04cb4c65c4b694ccfba710e))
+
 ## 0.9.0 (2025-09-19)
 
 Full Changelog: [v0.8.1...v0.9.0](https://github.com/evrimai/cartography-client/compare/v0.8.1...v0.9.0)
