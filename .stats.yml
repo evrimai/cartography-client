@@ -1,4 +1,4 @@
 configured_endpoints: 12
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/evrim%2Fcartography-019c4555bd7f48ce609750b9849e75f0d38139b67626a30592af24735d33451b.yml
-openapi_spec_hash: 931e9f1dd663c2ee0ffa1ccb92647228
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/evrim%2Fcartography-d7ed14ab37e8844eb74c306962b934b42dabf407205ac01ec00586d2d8bbe5a4.yml
+openapi_spec_hash: d144e568f7da71aed2c5ef841cf6ca8c
 config_hash: 68aa5cb29628bd3fdd0fe5588a71fe2c
