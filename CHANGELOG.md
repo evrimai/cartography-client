@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.2 (2025-10-12)
+
+Full Changelog: [v0.9.1...v0.9.2](https://github.com/evrimai/cartography-client/compare/v0.9.1...v0.9.2)
+
+### Chores
+
+* **internal:** detect missing future annotations with ruff ([88fced5](https://github.com/evrimai/cartography-client/commit/88fced51bb6c69c6ade5a7c36efb29897b8e0239))
+
 ## 0.9.1 (2025-09-20)
 
 Full Changelog: [v0.9.0...v0.9.1](https://github.com/evrimai/cartography-client/compare/v0.9.0...v0.9.1)
