@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.9.3 (2025-10-30)
+
+Full Changelog: [v0.9.2...v0.9.3](https://github.com/evrimai/cartography-client/compare/v0.9.2...v0.9.3)
+
+### Bug Fixes
+
+* **client:** close streams without requiring full consumption ([e7d426f](https://github.com/evrimai/cartography-client/commit/e7d426f7d254b257bc6ba8adbf848686f3d29b08))
+
+
+### Chores
+
+* bump `httpx-aiohttp` version to 0.1.9 ([6036d15](https://github.com/evrimai/cartography-client/commit/6036d1522e018c7d67c86de7b23111f590201358))
+
 ## 0.9.2 (2025-10-12)
 
 Full Changelog: [v0.9.1...v0.9.2](https://github.com/evrimai/cartography-client/compare/v0.9.1...v0.9.2)
