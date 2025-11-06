@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.10.0 (2025-11-06)
+
+Full Changelog: [v0.9.3...v0.10.0](https://github.com/evrimai/cartography-client/compare/v0.9.3...v0.10.0)
+
+### Features
+
+* **api:** api update ([3dd4766](https://github.com/evrimai/cartography-client/commit/3dd47667ab2266c2eabcef5faec21729edb10f5d))
+
+
+### Chores
+
+* **internal/tests:** avoid race condition with implicit client cleanup ([891e5db](https://github.com/evrimai/cartography-client/commit/891e5db5e6aeed20693df048a1ff000482647358))
+* **internal:** grammar fix (it's -&gt; its) ([b16d21b](https://github.com/evrimai/cartography-client/commit/b16d21be4c881991c759fe43825f1f6532553c8a))
+
 ## 0.9.3 (2025-10-30)
 
 Full Changelog: [v0.9.2...v0.9.3](https://github.com/evrimai/cartography-client/compare/v0.9.2...v0.9.3)
