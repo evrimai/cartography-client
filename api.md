@@ -45,7 +45,7 @@ Methods:
 Types:
 
 ```python
-from cartography.types import CrawlCreateGraphResponse
+from cartography.types import EngineType, CrawlCreateGraphResponse
 ```
 
 Methods:
@@ -60,6 +60,7 @@ Types:
 from cartography.types import (
     BulkDownloadResult,
     DownloaderType,
+    WaitUntil,
     DownloadCreateBulkResponse,
     DownloadCreateSingleResponse,
 )

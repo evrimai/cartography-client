@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 from typing import List, Optional
-from typing_extensions import Literal, Required, TypedDict
+from typing_extensions import Required, TypedDict
+
+from ...engine_type import EngineType
 
 __all__ = ["CrawlCreateParams"]
 
@@ -13,9 +15,7 @@ class CrawlCreateParams(TypedDict, total=False):
 
     crawl_id: Required[str]
 
-    engines: Required[
-        List[Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]]
-    ]
+    engines: Required[List[EngineType]]
 
     url: Required[str]
 
@@ -44,5 +44,3 @@ class CrawlCreateParams(TypedDict, total=False):
     teardown: bool
 
     visit_external: bool
-
-    wait_until: Optional[Literal["domcontentloaded", "load", "networkidle", "commit"]]

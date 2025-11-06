@@ -52,7 +52,6 @@ class TestCrawl:
             stealth=True,
             teardown=True,
             visit_external=True,
-            wait_until="domcontentloaded",
         )
         assert_matches_type(WorkflowResult, crawl, path=["response"])
 
@@ -181,7 +180,6 @@ class TestAsyncCrawl:
             stealth=True,
             teardown=True,
             visit_external=True,
-            wait_until="domcontentloaded",
         )
         assert_matches_type(WorkflowResult, crawl, path=["response"])
 
