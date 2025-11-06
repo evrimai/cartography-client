@@ -3,15 +3,15 @@
 from __future__ import annotations
 
 from typing import Dict, Optional
-from typing_extensions import Literal, Required, TypedDict
+from typing_extensions import Required, TypedDict
+
+from .engine_type import EngineType
 
 __all__ = ["ScrapeEngineParam"]
 
 
 class ScrapeEngineParam(TypedDict, total=False):
-    engine_type: Required[
-        Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]
-    ]
+    engine_type: Required[EngineType]
 
     headers: Optional[Dict[str, str]]
     """Custom headers"""

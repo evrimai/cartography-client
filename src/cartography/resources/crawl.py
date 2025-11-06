@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from typing import List, Optional
-from typing_extensions import Literal
 
 import httpx
 
@@ -19,6 +18,7 @@ from .._response import (
     async_to_streamed_response_wrapper,
 )
 from .._base_client import make_request_options
+from ..types.engine_type import EngineType
 from ..types.crawl_create_graph_response import CrawlCreateGraphResponse
 
 __all__ = ["CrawlResource", "AsyncCrawlResource"]
@@ -48,9 +48,7 @@ class CrawlResource(SyncAPIResource):
         self,
         *,
         crawl_id: str,
-        engines: List[
-            Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]
-        ],
+        engines: List[EngineType],
         s3_bucket: str,
         url: str,
         absolute_only: bool | Omit = omit,
@@ -160,9 +158,7 @@ class AsyncCrawlResource(AsyncAPIResource):
         self,
         *,
         crawl_id: str,
-        engines: List[
-            Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]
-        ],
+        engines: List[EngineType],
         s3_bucket: str,
         url: str,
         absolute_only: bool | Omit = omit,
