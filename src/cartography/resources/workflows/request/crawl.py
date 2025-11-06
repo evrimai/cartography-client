@@ -68,6 +68,7 @@ class CrawlResource(SyncAPIResource):
         stealth: bool | Omit = omit,
         teardown: bool | Omit = omit,
         visit_external: bool | Omit = omit,
+        wait_until: Optional[Literal["domcontentloaded", "load", "networkidle", "commit"]] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -109,6 +110,7 @@ class CrawlResource(SyncAPIResource):
                     "stealth": stealth,
                     "teardown": teardown,
                     "visit_external": visit_external,
+                    "wait_until": wait_until,
                 },
                 crawl_create_params.CrawlCreateParams,
             ),
@@ -193,6 +195,7 @@ class AsyncCrawlResource(AsyncAPIResource):
         stealth: bool | Omit = omit,
         teardown: bool | Omit = omit,
         visit_external: bool | Omit = omit,
+        wait_until: Optional[Literal["domcontentloaded", "load", "networkidle", "commit"]] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -234,6 +237,7 @@ class AsyncCrawlResource(AsyncAPIResource):
                     "stealth": stealth,
                     "teardown": teardown,
                     "visit_external": visit_external,
+                    "wait_until": wait_until,
                 },
                 crawl_create_params.CrawlCreateParams,
             ),

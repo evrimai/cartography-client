@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 from typing import Optional
+from typing_extensions import Literal
 
 import httpx
 
-from ..types import WaitUntil, DownloaderType, download_create_bulk_params, download_create_single_params
+from ..types import DownloaderType, download_create_bulk_params, download_create_single_params
 from .._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
 from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
@@ -18,7 +19,6 @@ from .._response import (
     async_to_streamed_response_wrapper,
 )
 from .._base_client import make_request_options
-from ..types.wait_until import WaitUntil
 from ..types.downloader_type import DownloaderType
 from ..types.download_create_bulk_response import DownloadCreateBulkResponse
 from ..types.download_create_single_response import DownloadCreateSingleResponse
@@ -56,7 +56,7 @@ class DownloadResource(SyncAPIResource):
         debug: bool | Omit = omit,
         downloader_type: DownloaderType | Omit = omit,
         max_workers: int | Omit = omit,
-        wait_until: WaitUntil | Omit = omit,
+        wait_until: Literal["commit", "domcontentloaded", "load", "networkidle"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -123,7 +123,7 @@ class DownloadResource(SyncAPIResource):
         downloader_type: DownloaderType | Omit = omit,
         s3_key: Optional[str] | Omit = omit,
         timeout_ms: int | Omit = omit,
-        wait_until: WaitUntil | Omit = omit,
+        wait_until: Literal["commit", "domcontentloaded", "load", "networkidle"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -207,7 +207,7 @@ class AsyncDownloadResource(AsyncAPIResource):
         debug: bool | Omit = omit,
         downloader_type: DownloaderType | Omit = omit,
         max_workers: int | Omit = omit,
-        wait_until: WaitUntil | Omit = omit,
+        wait_until: Literal["commit", "domcontentloaded", "load", "networkidle"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -274,7 +274,7 @@ class AsyncDownloadResource(AsyncAPIResource):
         downloader_type: DownloaderType | Omit = omit,
         s3_key: Optional[str] | Omit = omit,
         timeout_ms: int | Omit = omit,
-        wait_until: WaitUntil | Omit = omit,
+        wait_until: Literal["commit", "domcontentloaded", "load", "networkidle"] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,

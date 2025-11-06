@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 
-from typing_extensions import Required, TypedDict
+from typing_extensions import Literal, Required, TypedDict
 
 from .._types import SequenceNotStr
-from .wait_until import WaitUntil
 from .downloader_type import DownloaderType
 
 __all__ = ["DownloadCreateBulkParams"]
@@ -33,5 +32,5 @@ class DownloadCreateBulkParams(TypedDict, total=False):
     max_workers: int
     """Maximum concurrent workers"""
 
-    wait_until: WaitUntil
+    wait_until: Literal["commit", "domcontentloaded", "load", "networkidle"]
     """When to consider downloads complete"""
