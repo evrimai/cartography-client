@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from typing import List, Iterable, Optional
-from typing_extensions import Literal
 
 import httpx
 
@@ -18,6 +17,7 @@ from ...._response import (
     async_to_streamed_response_wrapper,
 )
 from ...._base_client import make_request_options
+from ....types.engine_type import EngineType
 from ....types.workflows.request import crawl_create_params, crawl_create_bulk_params
 from ....types.workflows.request.workflow_result import WorkflowResult
 from ....types.workflows.request.crawl_request_param import CrawlRequestParam
@@ -51,9 +51,7 @@ class CrawlResource(SyncAPIResource):
         *,
         bucket_name: str,
         crawl_id: str,
-        engines: List[
-            Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]
-        ],
+        engines: List[EngineType],
         url: str,
         absolute_only: bool | Omit = omit,
         agentic: bool | Omit = omit,
@@ -68,7 +66,6 @@ class CrawlResource(SyncAPIResource):
         stealth: bool | Omit = omit,
         teardown: bool | Omit = omit,
         visit_external: bool | Omit = omit,
-        wait_until: Optional[Literal["domcontentloaded", "load", "networkidle", "commit"]] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -110,7 +107,6 @@ class CrawlResource(SyncAPIResource):
                     "stealth": stealth,
                     "teardown": teardown,
                     "visit_external": visit_external,
-                    "wait_until": wait_until,
                 },
                 crawl_create_params.CrawlCreateParams,
             ),
@@ -178,9 +174,7 @@ class AsyncCrawlResource(AsyncAPIResource):
         *,
         bucket_name: str,
         crawl_id: str,
-        engines: List[
-            Literal["FLEET", "ZENROWS", "SCRAPINGBEE", "FLEET_ASYNC", "FLEET_WORKFLOW", "ASYNC_FLEET_STICKY"]
-        ],
+        engines: List[EngineType],
         url: str,
         absolute_only: bool | Omit = omit,
         agentic: bool | Omit = omit,
@@ -195,7 +189,6 @@ class AsyncCrawlResource(AsyncAPIResource):
         stealth: bool | Omit = omit,
         teardown: bool | Omit = omit,
         visit_external: bool | Omit = omit,
-        wait_until: Optional[Literal["domcontentloaded", "load", "networkidle", "commit"]] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -237,7 +230,6 @@ class AsyncCrawlResource(AsyncAPIResource):
                     "stealth": stealth,
                     "teardown": teardown,
                     "visit_external": visit_external,
-                    "wait_until": wait_until,
                 },
                 crawl_create_params.CrawlCreateParams,
             ),
