@@ -44,3 +44,5 @@ class CrawlRequestParam(TypedDict, total=False):
     teardown: bool
 
     visit_external: bool
+
+    wait_until: Optional[Literal["domcontentloaded", "load", "networkidle", "commit"]]
