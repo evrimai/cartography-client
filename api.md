@@ -60,6 +60,7 @@ Types:
 from cartography.types import (
     BulkDownloadResult,
     DownloaderType,
+    WaitUntil,
     DownloadCreateBulkResponse,
     DownloadCreateSingleResponse,
 )
