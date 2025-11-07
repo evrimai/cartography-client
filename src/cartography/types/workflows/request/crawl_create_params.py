@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from typing import List, Optional
-from typing_extensions import Required, TypedDict
+from typing_extensions import Literal, Required, TypedDict
 
 from ...engine_type import EngineType
 
@@ -44,3 +44,5 @@ class CrawlCreateParams(TypedDict, total=False):
     teardown: bool
 
     visit_external: bool
+
+    wait_until: Optional[Literal["domcontentloaded", "load", "networkidle", "commit"]]
