@@ -3,9 +3,8 @@
 from __future__ import annotations
 
 from typing import Optional
-from typing_extensions import Required, TypedDict
+from typing_extensions import Literal, Required, TypedDict
 
-from .wait_until import WaitUntil
 from .downloader_type import DownloaderType
 
 __all__ = ["DownloadCreateSingleParams"]
@@ -27,5 +26,5 @@ class DownloadCreateSingleParams(TypedDict, total=False):
     timeout_ms: int
     """Timeout in milliseconds"""
 
-    wait_until: WaitUntil
+    wait_until: Literal["commit", "domcontentloaded", "load", "networkidle"]
     """When to consider download complete"""
