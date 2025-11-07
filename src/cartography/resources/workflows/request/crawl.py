@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 from typing import List, Iterable, Optional
-from typing_extensions import Literal
 
 import httpx
 
+from ....types import WaitUntil
 from ...._types import Body, Omit, Query, Headers, NotGiven, omit, not_given
 from ...._utils import maybe_transform, async_maybe_transform
 from ...._compat import cached_property
@@ -18,6 +18,7 @@ from ...._response import (
     async_to_streamed_response_wrapper,
 )
 from ...._base_client import make_request_options
+from ....types.wait_until import WaitUntil
 from ....types.engine_type import EngineType
 from ....types.workflows.request import crawl_create_params, crawl_create_bulk_params
 from ....types.workflows.request.workflow_result import WorkflowResult
@@ -67,7 +68,7 @@ class CrawlResource(SyncAPIResource):
         stealth: bool | Omit = omit,
         teardown: bool | Omit = omit,
         visit_external: bool | Omit = omit,
-        wait_until: Optional[Literal["domcontentloaded", "load", "networkidle", "commit"]] | Omit = omit,
+        wait_until: Optional[WaitUntil] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -80,6 +81,8 @@ class CrawlResource(SyncAPIResource):
         token_data: api token :return: response
 
         Args:
+          wait_until: When to consider page load complete for web scraping operations
+
           extra_headers: Send extra headers
 
           extra_query: Add additional query parameters to the request
@@ -192,7 +195,7 @@ class AsyncCrawlResource(AsyncAPIResource):
         stealth: bool | Omit = omit,
         teardown: bool | Omit = omit,
         visit_external: bool | Omit = omit,
-        wait_until: Optional[Literal["domcontentloaded", "load", "networkidle", "commit"]] | Omit = omit,
+        wait_until: Optional[WaitUntil] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -205,6 +208,8 @@ class AsyncCrawlResource(AsyncAPIResource):
         token_data: api token :return: response
 
         Args:
+          wait_until: When to consider page load complete for web scraping operations
+
           extra_headers: Send extra headers
 
           extra_query: Add additional query parameters to the request
