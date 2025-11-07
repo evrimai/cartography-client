@@ -41,7 +41,7 @@ class TestDownload:
             debug=True,
             downloader_type="FLEET_ASYNC",
             max_workers=8,
-            wait_until="commit",
+            wait_until="domcontentloaded",
         )
         assert_matches_type(DownloadCreateBulkResponse, download, path=["response"])
 
@@ -152,7 +152,7 @@ class TestAsyncDownload:
             debug=True,
             downloader_type="FLEET_ASYNC",
             max_workers=8,
-            wait_until="commit",
+            wait_until="domcontentloaded",
         )
         assert_matches_type(DownloadCreateBulkResponse, download, path=["response"])
 

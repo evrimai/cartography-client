@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 from typing import List, Optional
-from typing_extensions import Literal, Required, TypedDict
+from typing_extensions import Required, TypedDict
 
+from ...wait_until import WaitUntil
 from ...engine_type import EngineType
 
 __all__ = ["CrawlCreateParams"]
@@ -45,4 +46,5 @@ class CrawlCreateParams(TypedDict, total=False):
 
     visit_external: bool
 
-    wait_until: Optional[Literal["domcontentloaded", "load", "networkidle", "commit"]]
+    wait_until: Optional[WaitUntil]
+    """When to consider page load complete for web scraping operations"""

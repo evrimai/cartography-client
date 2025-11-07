@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from .wait_until import WaitUntil as WaitUntil
 from .engine_type import EngineType as EngineType
 from .downloader_type import DownloaderType as DownloaderType
 from .bulk_scrape_result import BulkScrapeResult as BulkScrapeResult
