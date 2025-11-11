@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.13.1 (2025-11-11)
+
+Full Changelog: [v0.13.0...v0.13.1](https://github.com/evrimai/cartography-client/compare/v0.13.0...v0.13.1)
+
+### Bug Fixes
+
+* compat with Python 3.14 ([842352e](https://github.com/evrimai/cartography-client/commit/842352e0f102800845f27729e59e96c59bcf5451))
+
+
+### Chores
+
+* **package:** drop Python 3.8 support ([1663b47](https://github.com/evrimai/cartography-client/commit/1663b47f067b2046756b47c6fbac366a1aa78304))
+
 ## 0.13.0 (2025-11-07)
 
 Full Changelog: [v0.12.0...v0.13.0](https://github.com/evrimai/cartography-client/compare/v0.12.0...v0.13.0)
