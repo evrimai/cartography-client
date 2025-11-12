@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.13.2 (2025-11-12)
+
+Full Changelog: [v0.13.1...v0.13.2](https://github.com/evrimai/cartography-client/compare/v0.13.1...v0.13.2)
+
+### Bug Fixes
+
+* **compat:** update signatures of `model_dump` and `model_dump_json` for Pydantic v1 ([5c7c85b](https://github.com/evrimai/cartography-client/commit/5c7c85bd67bec17395433157518546fc41a7dbcc))
+
 ## 0.13.1 (2025-11-11)
 
 Full Changelog: [v0.13.0...v0.13.1](https://github.com/evrimai/cartography-client/compare/v0.13.0...v0.13.1)
