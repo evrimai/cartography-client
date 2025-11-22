@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.13.3 (2025-11-22)
+
+Full Changelog: [v0.13.2...v0.13.3](https://github.com/evrimai/cartography-client/compare/v0.13.2...v0.13.3)
+
+### Chores
+
+* add Python 3.14 classifier and testing ([2c7e427](https://github.com/evrimai/cartography-client/commit/2c7e427e13059156331b63b205ca2c94830015b7))
+
 ## 0.13.2 (2025-11-12)
 
 Full Changelog: [v0.13.1...v0.13.2](https://github.com/evrimai/cartography-client/compare/v0.13.1...v0.13.2)
