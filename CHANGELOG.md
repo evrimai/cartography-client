@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.13.3 (2025-11-28)
+
+Full Changelog: [v0.13.2...v0.13.3](https://github.com/evrimai/cartography-client/compare/v0.13.2...v0.13.3)
+
+### Bug Fixes
+
+* ensure streams are always closed ([eb5cac1](https://github.com/evrimai/cartography-client/commit/eb5cac16b7b61a0f5ae6c057e5f290844847afb6))
+
+
+### Chores
+
+* add Python 3.14 classifier and testing ([2c7e427](https://github.com/evrimai/cartography-client/commit/2c7e427e13059156331b63b205ca2c94830015b7))
+* **deps:** mypy 1.18.1 has a regression, pin to 1.17 ([dd77c91](https://github.com/evrimai/cartography-client/commit/dd77c9100aae7ad60e5156a6404b943b1ae7aec6))
+
 ## 0.13.2 (2025-11-12)
 
 Full Changelog: [v0.13.1...v0.13.2](https://github.com/evrimai/cartography-client/compare/v0.13.1...v0.13.2)
