@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.13.4 (2025-12-03)
+
+Full Changelog: [v0.13.3...v0.13.4](https://github.com/evrimai/cartography-client/compare/v0.13.3...v0.13.4)
+
+### Chores
+
+* **docs:** use environment variables for authentication in code snippets ([0cbae06](https://github.com/evrimai/cartography-client/commit/0cbae06d8a84d35ae46e65275a2570b9d18bef40))
+* update lockfile ([28befbd](https://github.com/evrimai/cartography-client/commit/28befbdd3dc004ce05616f278a5b3c13dc1446a4))
+
 ## 0.13.3 (2025-11-28)
 
 Full Changelog: [v0.13.2...v0.13.3](https://github.com/evrimai/cartography-client/compare/v0.13.2...v0.13.3)
