@@ -81,6 +81,7 @@ pip install cartography-client[aiohttp]
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
 
 ```python
+import os
 import asyncio
 from cartography import DefaultAioHttpClient
 from cartography import AsyncCartography
@@ -88,7 +89,9 @@ from cartography import AsyncCartography
 
 async def main() -> None:
     async with AsyncCartography(
-        bearer_token="My Bearer Token",
+        bearer_token=os.environ.get(
+            "CARTOGRAPHY_BEARER_TOKEN"
+        ),  # This is the default and can be omitted
         http_client=DefaultAioHttpClient(),
     ) as client:
         response = await client.health.check()
