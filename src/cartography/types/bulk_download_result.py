@@ -9,6 +9,8 @@ __all__ = ["BulkDownloadResult"]
 
 
 class BulkDownloadResult(BaseModel):
+    """Individual result for bulk download"""
+
     status: Literal["success", "cached", "failed", "save_failed"]
     """Status of bulk download result"""
 
