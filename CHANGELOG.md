@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.13.5 (2025-12-09)
+
+Full Changelog: [v0.13.4...v0.13.5](https://github.com/evrimai/cartography-client/compare/v0.13.4...v0.13.5)
+
+### Bug Fixes
+
+* **types:** allow pyright to infer TypedDict types within SequenceNotStr ([c26ff29](https://github.com/evrimai/cartography-client/commit/c26ff296614c5688c08e056cc16df8705a494748))
+
 ## 0.13.4 (2025-12-03)
 
 Full Changelog: [v0.13.3...v0.13.4](https://github.com/evrimai/cartography-client/compare/v0.13.3...v0.13.4)
