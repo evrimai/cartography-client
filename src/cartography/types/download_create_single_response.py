@@ -8,6 +8,8 @@ __all__ = ["DownloadCreateSingleResponse"]
 
 
 class DownloadCreateSingleResponse(BaseModel):
+    """Response model for single file download"""
+
     download_url: str
 
     s3_bucket: str

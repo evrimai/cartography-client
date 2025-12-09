@@ -9,6 +9,8 @@ __all__ = ["ScrapeScrapeBulkResponse", "Results"]
 
 
 class Results(BaseModel):
+    """Grouped results by status"""
+
     cached: Optional[List[BulkScrapeResult]] = None
 
     failed: Optional[List[BulkScrapeResult]] = None
@@ -19,6 +21,8 @@ class Results(BaseModel):
 
 
 class ScrapeScrapeBulkResponse(BaseModel):
+    """Response model for bulk URL scraping"""
+
     cached_count: int
 
     crawl_id: str

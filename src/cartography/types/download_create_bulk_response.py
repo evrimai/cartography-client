@@ -9,6 +9,8 @@ __all__ = ["DownloadCreateBulkResponse", "Results"]
 
 
 class Results(BaseModel):
+    """Grouped results by status"""
+
     cached: Optional[List[BulkDownloadResult]] = None
 
     failed: Optional[List[BulkDownloadResult]] = None
@@ -19,6 +21,8 @@ class Results(BaseModel):
 
 
 class DownloadCreateBulkResponse(BaseModel):
+    """Response model for bulk file downloads"""
+
     cached_count: int
 
     crawl_id: str
