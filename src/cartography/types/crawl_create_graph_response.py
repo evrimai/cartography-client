@@ -8,6 +8,8 @@ __all__ = ["CrawlCreateGraphResponse"]
 
 
 class CrawlCreateGraphResponse(BaseModel):
+    """Response model for crawl graph generation"""
+
     absolute_only: bool
 
     batch_size: int

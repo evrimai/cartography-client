@@ -11,6 +11,8 @@ __all__ = ["ScrapeEngineParam"]
 
 
 class ScrapeEngineParam(TypedDict, total=False):
+    """Configuration for a scraping engine"""
+
     engine_type: Required[EngineType]
 
     headers: Optional[Dict[str, str]]

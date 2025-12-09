@@ -8,6 +8,8 @@ __all__ = ["BulkScrapeResult"]
 
 
 class BulkScrapeResult(BaseModel):
+    """Individual result for bulk scraping"""
+
     status: str
 
     url: str

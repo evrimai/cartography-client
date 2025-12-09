@@ -8,6 +8,8 @@ __all__ = ["ScrapeScrapeSingleResponse"]
 
 
 class ScrapeScrapeSingleResponse(BaseModel):
+    """Response model for single URL scraping"""
+
     composite_hash: Optional[str] = None
 
     content: Optional[str] = None
