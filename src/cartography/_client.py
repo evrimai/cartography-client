@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import os
-from typing import Any, Mapping
+from typing import TYPE_CHECKING, Any, Mapping
 from typing_extensions import Self, override
 
 import httpx
@@ -20,8 +20,8 @@ from ._types import (
     not_given,
 )
 from ._utils import is_given, get_async_library
+from ._compat import cached_property
 from ._version import __version__
-from .resources import crawl, health, scrape, api_info, download
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import APIStatusError, CartographyError
 from ._base_client import (
@@ -29,7 +29,15 @@ from ._base_client import (
     SyncAPIClient,
     AsyncAPIClient,
 )
-from .resources.workflows import workflows
+
+if TYPE_CHECKING:
+    from .resources import crawl, health, scrape, api_info, download, workflows
+    from .resources.crawl import CrawlResource, AsyncCrawlResource
+    from .resources.health import HealthResource, AsyncHealthResource
+    from .resources.scrape import ScrapeResource, AsyncScrapeResource
+    from .resources.api_info import APIInfoResource, AsyncAPIInfoResource
+    from .resources.download import DownloadResource, AsyncDownloadResource
+    from .resources.workflows.workflows import WorkflowsResource, AsyncWorkflowsResource
 
 __all__ = [
     "Timeout",
@@ -44,15 +52,6 @@ __all__ = [
 
 
 class Cartography(SyncAPIClient):
-    health: health.HealthResource
-    api_info: api_info.APIInfoResource
-    scrape: scrape.ScrapeResource
-    crawl: crawl.CrawlResource
-    download: download.DownloadResource
-    workflows: workflows.WorkflowsResource
-    with_raw_response: CartographyWithRawResponse
-    with_streaming_response: CartographyWithStreamedResponse
-
     # client options
     bearer_token: str
 
@@ -107,14 +106,49 @@ class Cartography(SyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.health = health.HealthResource(self)
-        self.api_info = api_info.APIInfoResource(self)
-        self.scrape = scrape.ScrapeResource(self)
-        self.crawl = crawl.CrawlResource(self)
-        self.download = download.DownloadResource(self)
-        self.workflows = workflows.WorkflowsResource(self)
-        self.with_raw_response = CartographyWithRawResponse(self)
-        self.with_streaming_response = CartographyWithStreamedResponse(self)
+    @cached_property
+    def health(self) -> HealthResource:
+        from .resources.health import HealthResource
+
+        return HealthResource(self)
+
+    @cached_property
+    def api_info(self) -> APIInfoResource:
+        from .resources.api_info import APIInfoResource
+
+        return APIInfoResource(self)
+
+    @cached_property
+    def scrape(self) -> ScrapeResource:
+        from .resources.scrape import ScrapeResource
+
+        return ScrapeResource(self)
+
+    @cached_property
+    def crawl(self) -> CrawlResource:
+        from .resources.crawl import CrawlResource
+
+        return CrawlResource(self)
+
+    @cached_property
+    def download(self) -> DownloadResource:
+        from .resources.download import DownloadResource
+
+        return DownloadResource(self)
+
+    @cached_property
+    def workflows(self) -> WorkflowsResource:
+        from .resources.workflows import WorkflowsResource
+
+        return WorkflowsResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> CartographyWithRawResponse:
+        return CartographyWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> CartographyWithStreamedResponse:
+        return CartographyWithStreamedResponse(self)
 
     @property
     @override
@@ -222,15 +256,6 @@ class Cartography(SyncAPIClient):
 
 
 class AsyncCartography(AsyncAPIClient):
-    health: health.AsyncHealthResource
-    api_info: api_info.AsyncAPIInfoResource
-    scrape: scrape.AsyncScrapeResource
-    crawl: crawl.AsyncCrawlResource
-    download: download.AsyncDownloadResource
-    workflows: workflows.AsyncWorkflowsResource
-    with_raw_response: AsyncCartographyWithRawResponse
-    with_streaming_response: AsyncCartographyWithStreamedResponse
-
     # client options
     bearer_token: str
 
@@ -285,14 +310,49 @@ class AsyncCartography(AsyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.health = health.AsyncHealthResource(self)
-        self.api_info = api_info.AsyncAPIInfoResource(self)
-        self.scrape = scrape.AsyncScrapeResource(self)
-        self.crawl = crawl.AsyncCrawlResource(self)
-        self.download = download.AsyncDownloadResource(self)
-        self.workflows = workflows.AsyncWorkflowsResource(self)
-        self.with_raw_response = AsyncCartographyWithRawResponse(self)
-        self.with_streaming_response = AsyncCartographyWithStreamedResponse(self)
+    @cached_property
+    def health(self) -> AsyncHealthResource:
+        from .resources.health import AsyncHealthResource
+
+        return AsyncHealthResource(self)
+
+    @cached_property
+    def api_info(self) -> AsyncAPIInfoResource:
+        from .resources.api_info import AsyncAPIInfoResource
+
+        return AsyncAPIInfoResource(self)
+
+    @cached_property
+    def scrape(self) -> AsyncScrapeResource:
+        from .resources.scrape import AsyncScrapeResource
+
+        return AsyncScrapeResource(self)
+
+    @cached_property
+    def crawl(self) -> AsyncCrawlResource:
+        from .resources.crawl import AsyncCrawlResource
+
+        return AsyncCrawlResource(self)
+
+    @cached_property
+    def download(self) -> AsyncDownloadResource:
+        from .resources.download import AsyncDownloadResource
+
+        return AsyncDownloadResource(self)
+
+    @cached_property
+    def workflows(self) -> AsyncWorkflowsResource:
+        from .resources.workflows import AsyncWorkflowsResource
+
+        return AsyncWorkflowsResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> AsyncCartographyWithRawResponse:
+        return AsyncCartographyWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> AsyncCartographyWithStreamedResponse:
+        return AsyncCartographyWithStreamedResponse(self)
 
     @property
     @override
@@ -400,43 +460,175 @@ class AsyncCartography(AsyncAPIClient):
 
 
 class CartographyWithRawResponse:
+    _client: Cartography
+
     def __init__(self, client: Cartography) -> None:
-        self.health = health.HealthResourceWithRawResponse(client.health)
-        self.api_info = api_info.APIInfoResourceWithRawResponse(client.api_info)
-        self.scrape = scrape.ScrapeResourceWithRawResponse(client.scrape)
-        self.crawl = crawl.CrawlResourceWithRawResponse(client.crawl)
-        self.download = download.DownloadResourceWithRawResponse(client.download)
-        self.workflows = workflows.WorkflowsResourceWithRawResponse(client.workflows)
+        self._client = client
+
+    @cached_property
+    def health(self) -> health.HealthResourceWithRawResponse:
+        from .resources.health import HealthResourceWithRawResponse
+
+        return HealthResourceWithRawResponse(self._client.health)
+
+    @cached_property
+    def api_info(self) -> api_info.APIInfoResourceWithRawResponse:
+        from .resources.api_info import APIInfoResourceWithRawResponse
+
+        return APIInfoResourceWithRawResponse(self._client.api_info)
+
+    @cached_property
+    def scrape(self) -> scrape.ScrapeResourceWithRawResponse:
+        from .resources.scrape import ScrapeResourceWithRawResponse
+
+        return ScrapeResourceWithRawResponse(self._client.scrape)
+
+    @cached_property
+    def crawl(self) -> crawl.CrawlResourceWithRawResponse:
+        from .resources.crawl import CrawlResourceWithRawResponse
+
+        return CrawlResourceWithRawResponse(self._client.crawl)
+
+    @cached_property
+    def download(self) -> download.DownloadResourceWithRawResponse:
+        from .resources.download import DownloadResourceWithRawResponse
+
+        return DownloadResourceWithRawResponse(self._client.download)
+
+    @cached_property
+    def workflows(self) -> workflows.WorkflowsResourceWithRawResponse:
+        from .resources.workflows import WorkflowsResourceWithRawResponse
+
+        return WorkflowsResourceWithRawResponse(self._client.workflows)
 
 
 class AsyncCartographyWithRawResponse:
+    _client: AsyncCartography
+
     def __init__(self, client: AsyncCartography) -> None:
-        self.health = health.AsyncHealthResourceWithRawResponse(client.health)
-        self.api_info = api_info.AsyncAPIInfoResourceWithRawResponse(client.api_info)
-        self.scrape = scrape.AsyncScrapeResourceWithRawResponse(client.scrape)
-        self.crawl = crawl.AsyncCrawlResourceWithRawResponse(client.crawl)
-        self.download = download.AsyncDownloadResourceWithRawResponse(client.download)
-        self.workflows = workflows.AsyncWorkflowsResourceWithRawResponse(client.workflows)
+        self._client = client
+
+    @cached_property
+    def health(self) -> health.AsyncHealthResourceWithRawResponse:
+        from .resources.health import AsyncHealthResourceWithRawResponse
+
+        return AsyncHealthResourceWithRawResponse(self._client.health)
+
+    @cached_property
+    def api_info(self) -> api_info.AsyncAPIInfoResourceWithRawResponse:
+        from .resources.api_info import AsyncAPIInfoResourceWithRawResponse
+
+        return AsyncAPIInfoResourceWithRawResponse(self._client.api_info)
+
+    @cached_property
+    def scrape(self) -> scrape.AsyncScrapeResourceWithRawResponse:
+        from .resources.scrape import AsyncScrapeResourceWithRawResponse
+
+        return AsyncScrapeResourceWithRawResponse(self._client.scrape)
+
+    @cached_property
+    def crawl(self) -> crawl.AsyncCrawlResourceWithRawResponse:
+        from .resources.crawl import AsyncCrawlResourceWithRawResponse
+
+        return AsyncCrawlResourceWithRawResponse(self._client.crawl)
+
+    @cached_property
+    def download(self) -> download.AsyncDownloadResourceWithRawResponse:
+        from .resources.download import AsyncDownloadResourceWithRawResponse
+
+        return AsyncDownloadResourceWithRawResponse(self._client.download)
+
+    @cached_property
+    def workflows(self) -> workflows.AsyncWorkflowsResourceWithRawResponse:
+        from .resources.workflows import AsyncWorkflowsResourceWithRawResponse
+
+        return AsyncWorkflowsResourceWithRawResponse(self._client.workflows)
 
 
 class CartographyWithStreamedResponse:
+    _client: Cartography
+
     def __init__(self, client: Cartography) -> None:
-        self.health = health.HealthResourceWithStreamingResponse(client.health)
-        self.api_info = api_info.APIInfoResourceWithStreamingResponse(client.api_info)
-        self.scrape = scrape.ScrapeResourceWithStreamingResponse(client.scrape)
-        self.crawl = crawl.CrawlResourceWithStreamingResponse(client.crawl)
-        self.download = download.DownloadResourceWithStreamingResponse(client.download)
-        self.workflows = workflows.WorkflowsResourceWithStreamingResponse(client.workflows)
+        self._client = client
+
+    @cached_property
+    def health(self) -> health.HealthResourceWithStreamingResponse:
+        from .resources.health import HealthResourceWithStreamingResponse
+
+        return HealthResourceWithStreamingResponse(self._client.health)
+
+    @cached_property
+    def api_info(self) -> api_info.APIInfoResourceWithStreamingResponse:
+        from .resources.api_info import APIInfoResourceWithStreamingResponse
+
+        return APIInfoResourceWithStreamingResponse(self._client.api_info)
+
+    @cached_property
+    def scrape(self) -> scrape.ScrapeResourceWithStreamingResponse:
+        from .resources.scrape import ScrapeResourceWithStreamingResponse
+
+        return ScrapeResourceWithStreamingResponse(self._client.scrape)
+
+    @cached_property
+    def crawl(self) -> crawl.CrawlResourceWithStreamingResponse:
+        from .resources.crawl import CrawlResourceWithStreamingResponse
+
+        return CrawlResourceWithStreamingResponse(self._client.crawl)
+
+    @cached_property
+    def download(self) -> download.DownloadResourceWithStreamingResponse:
+        from .resources.download import DownloadResourceWithStreamingResponse
+
+        return DownloadResourceWithStreamingResponse(self._client.download)
+
+    @cached_property
+    def workflows(self) -> workflows.WorkflowsResourceWithStreamingResponse:
+        from .resources.workflows import WorkflowsResourceWithStreamingResponse
+
+        return WorkflowsResourceWithStreamingResponse(self._client.workflows)
 
 
 class AsyncCartographyWithStreamedResponse:
+    _client: AsyncCartography
+
     def __init__(self, client: AsyncCartography) -> None:
-        self.health = health.AsyncHealthResourceWithStreamingResponse(client.health)
-        self.api_info = api_info.AsyncAPIInfoResourceWithStreamingResponse(client.api_info)
-        self.scrape = scrape.AsyncScrapeResourceWithStreamingResponse(client.scrape)
-        self.crawl = crawl.AsyncCrawlResourceWithStreamingResponse(client.crawl)
-        self.download = download.AsyncDownloadResourceWithStreamingResponse(client.download)
-        self.workflows = workflows.AsyncWorkflowsResourceWithStreamingResponse(client.workflows)
+        self._client = client
+
+    @cached_property
+    def health(self) -> health.AsyncHealthResourceWithStreamingResponse:
+        from .resources.health import AsyncHealthResourceWithStreamingResponse
+
+        return AsyncHealthResourceWithStreamingResponse(self._client.health)
+
+    @cached_property
+    def api_info(self) -> api_info.AsyncAPIInfoResourceWithStreamingResponse:
+        from .resources.api_info import AsyncAPIInfoResourceWithStreamingResponse
+
+        return AsyncAPIInfoResourceWithStreamingResponse(self._client.api_info)
+
+    @cached_property
+    def scrape(self) -> scrape.AsyncScrapeResourceWithStreamingResponse:
+        from .resources.scrape import AsyncScrapeResourceWithStreamingResponse
+
+        return AsyncScrapeResourceWithStreamingResponse(self._client.scrape)
+
+    @cached_property
+    def crawl(self) -> crawl.AsyncCrawlResourceWithStreamingResponse:
+        from .resources.crawl import AsyncCrawlResourceWithStreamingResponse
+
+        return AsyncCrawlResourceWithStreamingResponse(self._client.crawl)
+
+    @cached_property
+    def download(self) -> download.AsyncDownloadResourceWithStreamingResponse:
+        from .resources.download import AsyncDownloadResourceWithStreamingResponse
+
+        return AsyncDownloadResourceWithStreamingResponse(self._client.download)
+
+    @cached_property
+    def workflows(self) -> workflows.AsyncWorkflowsResourceWithStreamingResponse:
+        from .resources.workflows import AsyncWorkflowsResourceWithStreamingResponse
+
+        return AsyncWorkflowsResourceWithStreamingResponse(self._client.workflows)
 
 
 Client = Cartography
