@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.13.6 (2025-12-18)
+
+Full Changelog: [v0.13.5...v0.13.6](https://github.com/evrimai/cartography-client/compare/v0.13.5...v0.13.6)
+
+### Bug Fixes
+
+* use async_to_httpx_files in patch method ([2f28802](https://github.com/evrimai/cartography-client/commit/2f28802101920fc3973bc802ea8615ebc2cd678e))
+
+
+### Chores
+
+* add missing docstrings ([9db00c9](https://github.com/evrimai/cartography-client/commit/9db00c9635440b35fe6a9fa9598fd9999db8f7de))
+* **internal:** add missing files argument to base client ([1e5e246](https://github.com/evrimai/cartography-client/commit/1e5e2465b990f1a02f01ea2b2e48f14b966b4a32))
+* speedup initial import ([2a0eea3](https://github.com/evrimai/cartography-client/commit/2a0eea3437f74e0e569773d55d4bebd39720a49b))
+
 ## 0.13.5 (2025-12-09)
 
 Full Changelog: [v0.13.4...v0.13.5](https://github.com/evrimai/cartography-client/compare/v0.13.4...v0.13.5)
