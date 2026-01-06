@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.13.7 (2026-01-06)
+
+Full Changelog: [v0.13.6...v0.13.7](https://github.com/evrimai/cartography-client/compare/v0.13.6...v0.13.7)
+
+### Chores
+
+* **internal:** codegen related update ([23328c7](https://github.com/evrimai/cartography-client/commit/23328c7dba3d457cd0cf23dc6934c55eecb71b18))
+* **internal:** codegen related update ([82faa6d](https://github.com/evrimai/cartography-client/commit/82faa6ddeea861d67074f1f3b97c54ab890a88c1))
+
 ## 0.13.6 (2025-12-18)
 
 Full Changelog: [v0.13.5...v0.13.6](https://github.com/evrimai/cartography-client/compare/v0.13.5...v0.13.6)
