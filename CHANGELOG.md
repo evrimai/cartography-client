@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.14.0 (2026-01-14)
+
+Full Changelog: [v0.13.6...v0.14.0](https://github.com/evrimai/cartography-client/compare/v0.13.6...v0.14.0)
+
+### Features
+
+* **client:** add support for binary request streaming ([9ca257e](https://github.com/evrimai/cartography-client/commit/9ca257e6258c376a2370a0f752ba95a089c66c21))
+
+
+### Chores
+
+* **internal:** codegen related update ([23328c7](https://github.com/evrimai/cartography-client/commit/23328c7dba3d457cd0cf23dc6934c55eecb71b18))
+* **internal:** codegen related update ([82faa6d](https://github.com/evrimai/cartography-client/commit/82faa6ddeea861d67074f1f3b97c54ab890a88c1))
+
 ## 0.13.6 (2025-12-18)
 
 Full Changelog: [v0.13.5...v0.13.6](https://github.com/evrimai/cartography-client/compare/v0.13.5...v0.13.6)
