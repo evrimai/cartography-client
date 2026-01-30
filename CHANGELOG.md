@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.15.0 (2026-01-30)
+
+Full Changelog: [v0.14.0...v0.15.0](https://github.com/evrimai/cartography-client/compare/v0.14.0...v0.15.0)
+
+### Features
+
+* **client:** add custom JSON encoder for extended type support ([2433eda](https://github.com/evrimai/cartography-client/commit/2433eda6093733bfb7e5fb2b447446f270d5a524))
+
+
+### Chores
+
+* **ci:** upgrade `actions/github-script` ([9c29b3c](https://github.com/evrimai/cartography-client/commit/9c29b3c5f4d8f010c76e67a2eecbca87d205243a))
+* **internal:** update `actions/checkout` version ([6ccb23c](https://github.com/evrimai/cartography-client/commit/6ccb23c7501e7ee1341466b357c905555a44d868))
+
 ## 0.14.0 (2026-01-14)
 
 Full Changelog: [v0.13.6...v0.14.0](https://github.com/evrimai/cartography-client/compare/v0.13.6...v0.14.0)
