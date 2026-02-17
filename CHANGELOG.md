@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.16.0 (2026-02-17)
+
+Full Changelog: [v0.15.0...v0.16.0](https://github.com/evrimai/cartography-client/compare/v0.15.0...v0.16.0)
+
+### Features
+
+* **api:** api update ([a15a437](https://github.com/evrimai/cartography-client/commit/a15a437f5d12635925da0cabbecb27ccd6b4cba5))
+
+
+### Chores
+
+* format all `api.md` files ([d3ec161](https://github.com/evrimai/cartography-client/commit/d3ec161d6556e2d823c42c2806c5a9bb6120a145))
+* **internal:** bump dependencies ([0caf3d8](https://github.com/evrimai/cartography-client/commit/0caf3d8b82037e8b840ab499a047e15427c62e29))
+* **internal:** fix lint error on Python 3.14 ([d92d52f](https://github.com/evrimai/cartography-client/commit/d92d52f2f6bba7d1b277d1ca5ac8ac62d627bec3))
+
 ## 0.15.0 (2026-01-30)
 
 Full Changelog: [v0.14.0...v0.15.0](https://github.com/evrimai/cartography-client/compare/v0.14.0...v0.15.0)
