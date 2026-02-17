@@ -12,9 +12,6 @@ __all__ = ["DownloadCreateSingleParams"]
 
 
 class DownloadCreateSingleParams(TypedDict, total=False):
-    s3_bucket: Required[str]
-    """S3 bucket for storage"""
-
     url: Required[str]
     """URL to download"""
 

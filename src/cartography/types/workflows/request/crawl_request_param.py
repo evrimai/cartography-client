@@ -12,8 +12,6 @@ __all__ = ["CrawlRequestParam"]
 
 
 class CrawlRequestParam(TypedDict, total=False):
-    bucket_name: Required[str]
-
     crawl_id: Required[str]
 
     engines: Required[List[EngineType]]

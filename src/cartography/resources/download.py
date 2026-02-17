@@ -50,7 +50,6 @@ class DownloadResource(SyncAPIResource):
         self,
         *,
         crawl_id: str,
-        s3_bucket: str,
         urls: SequenceNotStr[str],
         batch_size: int | Omit = omit,
         debug: bool | Omit = omit,
@@ -65,14 +64,12 @@ class DownloadResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> DownloadCreateBulkResponse:
         """
-        Bulk download multiple files with checkpointing to S3
+        Bulk download multiple files with checkpointing
 
         Requires permission: download:write
 
         Args:
           crawl_id: Unique identifier for this crawl
-
-          s3_bucket: S3 bucket for storage and checkpoints
 
           urls: List of URLs to download
 
@@ -99,7 +96,6 @@ class DownloadResource(SyncAPIResource):
             body=maybe_transform(
                 {
                     "crawl_id": crawl_id,
-                    "s3_bucket": s3_bucket,
                     "urls": urls,
                     "batch_size": batch_size,
                     "debug": debug,
@@ -118,7 +114,6 @@ class DownloadResource(SyncAPIResource):
     def create_single(
         self,
         *,
-        s3_bucket: str,
         url: str,
         downloader_type: DownloaderType | Omit = omit,
         s3_key: Optional[str] | Omit = omit,
@@ -137,8 +132,6 @@ class DownloadResource(SyncAPIResource):
         Requires permission: download:write
 
         Args:
-          s3_bucket: S3 bucket for storage
-
           url: URL to download
 
           downloader_type: Available downloader types
@@ -161,7 +154,6 @@ class DownloadResource(SyncAPIResource):
             "/download/single",
             body=maybe_transform(
                 {
-                    "s3_bucket": s3_bucket,
                     "url": url,
                     "downloader_type": downloader_type,
                     "s3_key": s3_key,
@@ -201,7 +193,6 @@ class AsyncDownloadResource(AsyncAPIResource):
         self,
         *,
         crawl_id: str,
-        s3_bucket: str,
         urls: SequenceNotStr[str],
         batch_size: int | Omit = omit,
         debug: bool | Omit = omit,
@@ -216,14 +207,12 @@ class AsyncDownloadResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> DownloadCreateBulkResponse:
         """
-        Bulk download multiple files with checkpointing to S3
+        Bulk download multiple files with checkpointing
 
         Requires permission: download:write
 
         Args:
           crawl_id: Unique identifier for this crawl
-
-          s3_bucket: S3 bucket for storage and checkpoints
 
           urls: List of URLs to download
 
@@ -250,7 +239,6 @@ class AsyncDownloadResource(AsyncAPIResource):
             body=await async_maybe_transform(
                 {
                     "crawl_id": crawl_id,
-                    "s3_bucket": s3_bucket,
                     "urls": urls,
                     "batch_size": batch_size,
                     "debug": debug,
@@ -269,7 +257,6 @@ class AsyncDownloadResource(AsyncAPIResource):
     async def create_single(
         self,
         *,
-        s3_bucket: str,
         url: str,
         downloader_type: DownloaderType | Omit = omit,
         s3_key: Optional[str] | Omit = omit,
@@ -288,8 +275,6 @@ class AsyncDownloadResource(AsyncAPIResource):
         Requires permission: download:write
 
         Args:
-          s3_bucket: S3 bucket for storage
-
           url: URL to download
 
           downloader_type: Available downloader types
@@ -312,7 +297,6 @@ class AsyncDownloadResource(AsyncAPIResource):
             "/download/single",
             body=await async_maybe_transform(
                 {
-                    "s3_bucket": s3_bucket,
                     "url": url,
                     "downloader_type": downloader_type,
                     "s3_key": s3_key,
