@@ -23,7 +23,6 @@ class TestCrawl:
         crawl = client.crawl.create_graph(
             crawl_id="crawl_id",
             engines=["FLEET"],
-            s3_bucket="s3_bucket",
             url="https://example.com",
         )
         assert_matches_type(CrawlCreateGraphResponse, crawl, path=["response"])
@@ -34,7 +33,6 @@ class TestCrawl:
         crawl = client.crawl.create_graph(
             crawl_id="crawl_id",
             engines=["FLEET"],
-            s3_bucket="s3_bucket",
             url="https://example.com",
             absolute_only=True,
             batch_size=1,
@@ -53,7 +51,6 @@ class TestCrawl:
         response = client.crawl.with_raw_response.create_graph(
             crawl_id="crawl_id",
             engines=["FLEET"],
-            s3_bucket="s3_bucket",
             url="https://example.com",
         )
 
@@ -68,7 +65,6 @@ class TestCrawl:
         with client.crawl.with_streaming_response.create_graph(
             crawl_id="crawl_id",
             engines=["FLEET"],
-            s3_bucket="s3_bucket",
             url="https://example.com",
         ) as response:
             assert not response.is_closed
@@ -91,7 +87,6 @@ class TestAsyncCrawl:
         crawl = await async_client.crawl.create_graph(
             crawl_id="crawl_id",
             engines=["FLEET"],
-            s3_bucket="s3_bucket",
             url="https://example.com",
         )
         assert_matches_type(CrawlCreateGraphResponse, crawl, path=["response"])
@@ -102,7 +97,6 @@ class TestAsyncCrawl:
         crawl = await async_client.crawl.create_graph(
             crawl_id="crawl_id",
             engines=["FLEET"],
-            s3_bucket="s3_bucket",
             url="https://example.com",
             absolute_only=True,
             batch_size=1,
@@ -121,7 +115,6 @@ class TestAsyncCrawl:
         response = await async_client.crawl.with_raw_response.create_graph(
             crawl_id="crawl_id",
             engines=["FLEET"],
-            s3_bucket="s3_bucket",
             url="https://example.com",
         )
 
@@ -136,7 +129,6 @@ class TestAsyncCrawl:
         async with async_client.crawl.with_streaming_response.create_graph(
             crawl_id="crawl_id",
             engines=["FLEET"],
-            s3_bucket="s3_bucket",
             url="https://example.com",
         ) as response:
             assert not response.is_closed

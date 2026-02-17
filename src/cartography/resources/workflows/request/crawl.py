@@ -51,7 +51,6 @@ class CrawlResource(SyncAPIResource):
     def create(
         self,
         *,
-        bucket_name: str,
         crawl_id: str,
         engines: List[EngineType],
         url: str,
@@ -95,7 +94,6 @@ class CrawlResource(SyncAPIResource):
             "/workflows/request/crawl",
             body=maybe_transform(
                 {
-                    "bucket_name": bucket_name,
                     "crawl_id": crawl_id,
                     "engines": engines,
                     "url": url,
@@ -178,7 +176,6 @@ class AsyncCrawlResource(AsyncAPIResource):
     async def create(
         self,
         *,
-        bucket_name: str,
         crawl_id: str,
         engines: List[EngineType],
         url: str,
@@ -222,7 +219,6 @@ class AsyncCrawlResource(AsyncAPIResource):
             "/workflows/request/crawl",
             body=await async_maybe_transform(
                 {
-                    "bucket_name": bucket_name,
                     "crawl_id": crawl_id,
                     "engines": engines,
                     "url": url,

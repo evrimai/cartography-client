@@ -17,9 +17,6 @@ class CrawlCreateGraphParams(TypedDict, total=False):
     engines: Required[List[EngineType]]
     """List of engines to use"""
 
-    s3_bucket: Required[str]
-    """S3 bucket for checkpointing"""
-
     url: Required[str]
     """Root URL to start crawling from"""
 

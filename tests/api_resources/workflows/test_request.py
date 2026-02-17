@@ -21,7 +21,6 @@ class TestRequest:
     @parametrize
     def test_method_create_download(self, client: Cartography) -> None:
         request = client.workflows.request.create_download(
-            bucket_name="bucket_name",
             crawl_id="crawl_id",
             downloader_type="downloader_type",
             urls=["string"],
@@ -30,9 +29,19 @@ class TestRequest:
 
     @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
+    def test_method_create_download_with_all_params(self, client: Cartography) -> None:
+        request = client.workflows.request.create_download(
+            crawl_id="crawl_id",
+            downloader_type="downloader_type",
+            urls=["string"],
+            bucket_name="bucket_name",
+        )
+        assert_matches_type(RequestCreateDownloadResponse, request, path=["response"])
+
+    @pytest.mark.skip(reason="Prism tests are disabled")
+    @parametrize
     def test_raw_response_create_download(self, client: Cartography) -> None:
         response = client.workflows.request.with_raw_response.create_download(
-            bucket_name="bucket_name",
             crawl_id="crawl_id",
             downloader_type="downloader_type",
             urls=["string"],
@@ -47,7 +56,6 @@ class TestRequest:
     @parametrize
     def test_streaming_response_create_download(self, client: Cartography) -> None:
         with client.workflows.request.with_streaming_response.create_download(
-            bucket_name="bucket_name",
             crawl_id="crawl_id",
             downloader_type="downloader_type",
             urls=["string"],
@@ -70,7 +78,6 @@ class TestAsyncRequest:
     @parametrize
     async def test_method_create_download(self, async_client: AsyncCartography) -> None:
         request = await async_client.workflows.request.create_download(
-            bucket_name="bucket_name",
             crawl_id="crawl_id",
             downloader_type="downloader_type",
             urls=["string"],
@@ -79,9 +86,19 @@ class TestAsyncRequest:
 
     @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
+    async def test_method_create_download_with_all_params(self, async_client: AsyncCartography) -> None:
+        request = await async_client.workflows.request.create_download(
+            crawl_id="crawl_id",
+            downloader_type="downloader_type",
+            urls=["string"],
+            bucket_name="bucket_name",
+        )
+        assert_matches_type(RequestCreateDownloadResponse, request, path=["response"])
+
+    @pytest.mark.skip(reason="Prism tests are disabled")
+    @parametrize
     async def test_raw_response_create_download(self, async_client: AsyncCartography) -> None:
         response = await async_client.workflows.request.with_raw_response.create_download(
-            bucket_name="bucket_name",
             crawl_id="crawl_id",
             downloader_type="downloader_type",
             urls=["string"],
@@ -96,7 +113,6 @@ class TestAsyncRequest:
     @parametrize
     async def test_streaming_response_create_download(self, async_client: AsyncCartography) -> None:
         async with async_client.workflows.request.with_streaming_response.create_download(
-            bucket_name="bucket_name",
             crawl_id="crawl_id",
             downloader_type="downloader_type",
             urls=["string"],

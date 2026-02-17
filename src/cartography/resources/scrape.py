@@ -50,7 +50,6 @@ class ScrapeResource(SyncAPIResource):
         *,
         crawl_id: str,
         engines: Iterable[ScrapeEngineParam],
-        s3_bucket: str,
         urls: SequenceNotStr[str],
         batch_size: int | Omit = omit,
         debug: bool | Omit = omit,
@@ -63,7 +62,7 @@ class ScrapeResource(SyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ScrapeScrapeBulkResponse:
         """
-        Bulk scrape multiple URLs with checkpointing to S3
+        Bulk scrape multiple URLs with checkpointing
 
         Requires permission: scrape:write
 
@@ -71,8 +70,6 @@ class ScrapeResource(SyncAPIResource):
           crawl_id: Unique identifier for this crawl
 
           engines: List of engines to use
-
-          s3_bucket: S3 bucket for checkpointing
 
           urls: List of URLs to scrape
 
@@ -96,7 +93,6 @@ class ScrapeResource(SyncAPIResource):
                 {
                     "crawl_id": crawl_id,
                     "engines": engines,
-                    "s3_bucket": s3_bucket,
                     "urls": urls,
                     "batch_size": batch_size,
                     "debug": debug,
@@ -179,7 +175,6 @@ class AsyncScrapeResource(AsyncAPIResource):
         *,
         crawl_id: str,
         engines: Iterable[ScrapeEngineParam],
-        s3_bucket: str,
         urls: SequenceNotStr[str],
         batch_size: int | Omit = omit,
         debug: bool | Omit = omit,
@@ -192,7 +187,7 @@ class AsyncScrapeResource(AsyncAPIResource):
         timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> ScrapeScrapeBulkResponse:
         """
-        Bulk scrape multiple URLs with checkpointing to S3
+        Bulk scrape multiple URLs with checkpointing
 
         Requires permission: scrape:write
 
@@ -200,8 +195,6 @@ class AsyncScrapeResource(AsyncAPIResource):
           crawl_id: Unique identifier for this crawl
 
           engines: List of engines to use
-
-          s3_bucket: S3 bucket for checkpointing
 
           urls: List of URLs to scrape
 
@@ -225,7 +218,6 @@ class AsyncScrapeResource(AsyncAPIResource):
                 {
                     "crawl_id": crawl_id,
                     "engines": engines,
-                    "s3_bucket": s3_bucket,
                     "urls": urls,
                     "batch_size": batch_size,
                     "debug": debug,

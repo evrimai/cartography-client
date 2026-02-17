@@ -26,7 +26,6 @@ class TestScrape:
         scrape = client.scrape.scrape_bulk(
             crawl_id="crawl-123",
             engines=[{"engine_type": "FLEET"}],
-            s3_bucket="my-scraping-bucket",
             urls=["https://example.com", "https://example.org"],
         )
         assert_matches_type(ScrapeScrapeBulkResponse, scrape, path=["response"])
@@ -46,7 +45,6 @@ class TestScrape:
                     "wait_for": "wait_for",
                 }
             ],
-            s3_bucket="my-scraping-bucket",
             urls=["https://example.com", "https://example.org"],
             batch_size=50,
             debug=True,
@@ -60,7 +58,6 @@ class TestScrape:
         response = client.scrape.with_raw_response.scrape_bulk(
             crawl_id="crawl-123",
             engines=[{"engine_type": "FLEET"}],
-            s3_bucket="my-scraping-bucket",
             urls=["https://example.com", "https://example.org"],
         )
 
@@ -75,7 +72,6 @@ class TestScrape:
         with client.scrape.with_streaming_response.scrape_bulk(
             crawl_id="crawl-123",
             engines=[{"engine_type": "FLEET"}],
-            s3_bucket="my-scraping-bucket",
             urls=["https://example.com", "https://example.org"],
         ) as response:
             assert not response.is_closed
@@ -135,7 +131,6 @@ class TestAsyncScrape:
         scrape = await async_client.scrape.scrape_bulk(
             crawl_id="crawl-123",
             engines=[{"engine_type": "FLEET"}],
-            s3_bucket="my-scraping-bucket",
             urls=["https://example.com", "https://example.org"],
         )
         assert_matches_type(ScrapeScrapeBulkResponse, scrape, path=["response"])
@@ -155,7 +150,6 @@ class TestAsyncScrape:
                     "wait_for": "wait_for",
                 }
             ],
-            s3_bucket="my-scraping-bucket",
             urls=["https://example.com", "https://example.org"],
             batch_size=50,
             debug=True,
@@ -169,7 +163,6 @@ class TestAsyncScrape:
         response = await async_client.scrape.with_raw_response.scrape_bulk(
             crawl_id="crawl-123",
             engines=[{"engine_type": "FLEET"}],
-            s3_bucket="my-scraping-bucket",
             urls=["https://example.com", "https://example.org"],
         )
 
@@ -184,7 +177,6 @@ class TestAsyncScrape:
         async with async_client.scrape.with_streaming_response.scrape_bulk(
             crawl_id="crawl-123",
             engines=[{"engine_type": "FLEET"}],
-            s3_bucket="my-scraping-bucket",
             urls=["https://example.com", "https://example.org"],
         ) as response:
             assert not response.is_closed

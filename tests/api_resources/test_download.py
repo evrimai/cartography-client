@@ -25,7 +25,6 @@ class TestDownload:
     def test_method_create_bulk(self, client: Cartography) -> None:
         download = client.download.create_bulk(
             crawl_id="download-123",
-            s3_bucket="my-downloads",
             urls=["https://example.com/file1.pdf", "https://example.com/file2.pdf"],
         )
         assert_matches_type(DownloadCreateBulkResponse, download, path=["response"])
@@ -35,7 +34,6 @@ class TestDownload:
     def test_method_create_bulk_with_all_params(self, client: Cartography) -> None:
         download = client.download.create_bulk(
             crawl_id="download-123",
-            s3_bucket="my-downloads",
             urls=["https://example.com/file1.pdf", "https://example.com/file2.pdf"],
             batch_size=1,
             debug=True,
@@ -50,7 +48,6 @@ class TestDownload:
     def test_raw_response_create_bulk(self, client: Cartography) -> None:
         response = client.download.with_raw_response.create_bulk(
             crawl_id="download-123",
-            s3_bucket="my-downloads",
             urls=["https://example.com/file1.pdf", "https://example.com/file2.pdf"],
         )
 
@@ -64,7 +61,6 @@ class TestDownload:
     def test_streaming_response_create_bulk(self, client: Cartography) -> None:
         with client.download.with_streaming_response.create_bulk(
             crawl_id="download-123",
-            s3_bucket="my-downloads",
             urls=["https://example.com/file1.pdf", "https://example.com/file2.pdf"],
         ) as response:
             assert not response.is_closed
@@ -79,7 +75,6 @@ class TestDownload:
     @parametrize
     def test_method_create_single(self, client: Cartography) -> None:
         download = client.download.create_single(
-            s3_bucket="my-downloads",
             url="https://example.com/file.pdf",
         )
         assert_matches_type(DownloadCreateSingleResponse, download, path=["response"])
@@ -88,7 +83,6 @@ class TestDownload:
     @parametrize
     def test_method_create_single_with_all_params(self, client: Cartography) -> None:
         download = client.download.create_single(
-            s3_bucket="my-downloads",
             url="https://example.com/file.pdf",
             downloader_type="FLEET_ASYNC",
             s3_key="s3_key",
@@ -101,7 +95,6 @@ class TestDownload:
     @parametrize
     def test_raw_response_create_single(self, client: Cartography) -> None:
         response = client.download.with_raw_response.create_single(
-            s3_bucket="my-downloads",
             url="https://example.com/file.pdf",
         )
 
@@ -114,7 +107,6 @@ class TestDownload:
     @parametrize
     def test_streaming_response_create_single(self, client: Cartography) -> None:
         with client.download.with_streaming_response.create_single(
-            s3_bucket="my-downloads",
             url="https://example.com/file.pdf",
         ) as response:
             assert not response.is_closed
@@ -136,7 +128,6 @@ class TestAsyncDownload:
     async def test_method_create_bulk(self, async_client: AsyncCartography) -> None:
         download = await async_client.download.create_bulk(
             crawl_id="download-123",
-            s3_bucket="my-downloads",
             urls=["https://example.com/file1.pdf", "https://example.com/file2.pdf"],
         )
         assert_matches_type(DownloadCreateBulkResponse, download, path=["response"])
@@ -146,7 +137,6 @@ class TestAsyncDownload:
     async def test_method_create_bulk_with_all_params(self, async_client: AsyncCartography) -> None:
         download = await async_client.download.create_bulk(
             crawl_id="download-123",
-            s3_bucket="my-downloads",
             urls=["https://example.com/file1.pdf", "https://example.com/file2.pdf"],
             batch_size=1,
             debug=True,
@@ -161,7 +151,6 @@ class TestAsyncDownload:
     async def test_raw_response_create_bulk(self, async_client: AsyncCartography) -> None:
         response = await async_client.download.with_raw_response.create_bulk(
             crawl_id="download-123",
-            s3_bucket="my-downloads",
             urls=["https://example.com/file1.pdf", "https://example.com/file2.pdf"],
         )
 
@@ -175,7 +164,6 @@ class TestAsyncDownload:
     async def test_streaming_response_create_bulk(self, async_client: AsyncCartography) -> None:
         async with async_client.download.with_streaming_response.create_bulk(
             crawl_id="download-123",
-            s3_bucket="my-downloads",
             urls=["https://example.com/file1.pdf", "https://example.com/file2.pdf"],
         ) as response:
             assert not response.is_closed
@@ -190,7 +178,6 @@ class TestAsyncDownload:
     @parametrize
     async def test_method_create_single(self, async_client: AsyncCartography) -> None:
         download = await async_client.download.create_single(
-            s3_bucket="my-downloads",
             url="https://example.com/file.pdf",
         )
         assert_matches_type(DownloadCreateSingleResponse, download, path=["response"])
@@ -199,7 +186,6 @@ class TestAsyncDownload:
     @parametrize
     async def test_method_create_single_with_all_params(self, async_client: AsyncCartography) -> None:
         download = await async_client.download.create_single(
-            s3_bucket="my-downloads",
             url="https://example.com/file.pdf",
             downloader_type="FLEET_ASYNC",
             s3_key="s3_key",
@@ -212,7 +198,6 @@ class TestAsyncDownload:
     @parametrize
     async def test_raw_response_create_single(self, async_client: AsyncCartography) -> None:
         response = await async_client.download.with_raw_response.create_single(
-            s3_bucket="my-downloads",
             url="https://example.com/file.pdf",
         )
 
@@ -225,7 +210,6 @@ class TestAsyncDownload:
     @parametrize
     async def test_streaming_response_create_single(self, async_client: AsyncCartography) -> None:
         async with async_client.download.with_streaming_response.create_single(
-            s3_bucket="my-downloads",
             url="https://example.com/file.pdf",
         ) as response:
             assert not response.is_closed

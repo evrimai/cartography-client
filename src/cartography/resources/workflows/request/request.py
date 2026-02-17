@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Optional
+
 import httpx
 
 from .crawl import (
@@ -12,7 +14,7 @@ from .crawl import (
     CrawlResourceWithStreamingResponse,
     AsyncCrawlResourceWithStreamingResponse,
 )
-from ...._types import Body, Query, Headers, NotGiven, SequenceNotStr, not_given
+from ...._types import Body, Omit, Query, Headers, NotGiven, SequenceNotStr, omit, not_given
 from ...._utils import maybe_transform, async_maybe_transform
 from ...._compat import cached_property
 from ...._resource import SyncAPIResource, AsyncAPIResource
@@ -56,10 +58,10 @@ class RequestResource(SyncAPIResource):
     def create_download(
         self,
         *,
-        bucket_name: str,
         crawl_id: str,
         downloader_type: str,
         urls: SequenceNotStr[str],
+        bucket_name: Optional[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -84,10 +86,10 @@ class RequestResource(SyncAPIResource):
             "/workflows/request/download",
             body=maybe_transform(
                 {
-                    "bucket_name": bucket_name,
                     "crawl_id": crawl_id,
                     "downloader_type": downloader_type,
                     "urls": urls,
+                    "bucket_name": bucket_name,
                 },
                 request_create_download_params.RequestCreateDownloadParams,
             ),
@@ -125,10 +127,10 @@ class AsyncRequestResource(AsyncAPIResource):
     async def create_download(
         self,
         *,
-        bucket_name: str,
         crawl_id: str,
         downloader_type: str,
         urls: SequenceNotStr[str],
+        bucket_name: Optional[str] | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -153,10 +155,10 @@ class AsyncRequestResource(AsyncAPIResource):
             "/workflows/request/download",
             body=await async_maybe_transform(
                 {
-                    "bucket_name": bucket_name,
                     "crawl_id": crawl_id,
                     "downloader_type": downloader_type,
                     "urls": urls,
+                    "bucket_name": bucket_name,
                 },
                 request_create_download_params.RequestCreateDownloadParams,
             ),

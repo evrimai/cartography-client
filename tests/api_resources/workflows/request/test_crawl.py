@@ -24,7 +24,6 @@ class TestCrawl:
     @parametrize
     def test_method_create(self, client: Cartography) -> None:
         crawl = client.workflows.request.crawl.create(
-            bucket_name="bucket_name",
             crawl_id="crawl_id",
             engines=["FLEET"],
             url="url",
@@ -35,7 +34,6 @@ class TestCrawl:
     @parametrize
     def test_method_create_with_all_params(self, client: Cartography) -> None:
         crawl = client.workflows.request.crawl.create(
-            bucket_name="bucket_name",
             crawl_id="crawl_id",
             engines=["FLEET"],
             url="url",
@@ -60,7 +58,6 @@ class TestCrawl:
     @parametrize
     def test_raw_response_create(self, client: Cartography) -> None:
         response = client.workflows.request.crawl.with_raw_response.create(
-            bucket_name="bucket_name",
             crawl_id="crawl_id",
             engines=["FLEET"],
             url="url",
@@ -75,7 +72,6 @@ class TestCrawl:
     @parametrize
     def test_streaming_response_create(self, client: Cartography) -> None:
         with client.workflows.request.crawl.with_streaming_response.create(
-            bucket_name="bucket_name",
             crawl_id="crawl_id",
             engines=["FLEET"],
             url="url",
@@ -94,7 +90,6 @@ class TestCrawl:
         crawl = client.workflows.request.crawl.create_bulk(
             jobs=[
                 {
-                    "bucket_name": "bucket_name",
                     "crawl_id": "crawl_id",
                     "engines": ["FLEET"],
                     "url": "url",
@@ -109,7 +104,6 @@ class TestCrawl:
         response = client.workflows.request.crawl.with_raw_response.create_bulk(
             jobs=[
                 {
-                    "bucket_name": "bucket_name",
                     "crawl_id": "crawl_id",
                     "engines": ["FLEET"],
                     "url": "url",
@@ -128,7 +122,6 @@ class TestCrawl:
         with client.workflows.request.crawl.with_streaming_response.create_bulk(
             jobs=[
                 {
-                    "bucket_name": "bucket_name",
                     "crawl_id": "crawl_id",
                     "engines": ["FLEET"],
                     "url": "url",
@@ -153,7 +146,6 @@ class TestAsyncCrawl:
     @parametrize
     async def test_method_create(self, async_client: AsyncCartography) -> None:
         crawl = await async_client.workflows.request.crawl.create(
-            bucket_name="bucket_name",
             crawl_id="crawl_id",
             engines=["FLEET"],
             url="url",
@@ -164,7 +156,6 @@ class TestAsyncCrawl:
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncCartography) -> None:
         crawl = await async_client.workflows.request.crawl.create(
-            bucket_name="bucket_name",
             crawl_id="crawl_id",
             engines=["FLEET"],
             url="url",
@@ -189,7 +180,6 @@ class TestAsyncCrawl:
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncCartography) -> None:
         response = await async_client.workflows.request.crawl.with_raw_response.create(
-            bucket_name="bucket_name",
             crawl_id="crawl_id",
             engines=["FLEET"],
             url="url",
@@ -204,7 +194,6 @@ class TestAsyncCrawl:
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncCartography) -> None:
         async with async_client.workflows.request.crawl.with_streaming_response.create(
-            bucket_name="bucket_name",
             crawl_id="crawl_id",
             engines=["FLEET"],
             url="url",
@@ -223,7 +212,6 @@ class TestAsyncCrawl:
         crawl = await async_client.workflows.request.crawl.create_bulk(
             jobs=[
                 {
-                    "bucket_name": "bucket_name",
                     "crawl_id": "crawl_id",
                     "engines": ["FLEET"],
                     "url": "url",
@@ -238,7 +226,6 @@ class TestAsyncCrawl:
         response = await async_client.workflows.request.crawl.with_raw_response.create_bulk(
             jobs=[
                 {
-                    "bucket_name": "bucket_name",
                     "crawl_id": "crawl_id",
                     "engines": ["FLEET"],
                     "url": "url",
@@ -257,7 +244,6 @@ class TestAsyncCrawl:
         async with async_client.workflows.request.crawl.with_streaming_response.create_bulk(
             jobs=[
                 {
-                    "bucket_name": "bucket_name",
                     "crawl_id": "crawl_id",
                     "engines": ["FLEET"],
                     "url": "url",
