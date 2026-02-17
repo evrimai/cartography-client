@@ -49,7 +49,6 @@ class CrawlResource(SyncAPIResource):
         *,
         crawl_id: str,
         engines: List[EngineType],
-        s3_bucket: str,
         url: str,
         absolute_only: bool | Omit = omit,
         batch_size: int | Omit = omit,
@@ -70,8 +69,8 @@ class CrawlResource(SyncAPIResource):
         Create a crawl graph by recursively crawling from a root URL
 
         This endpoint crawls a website starting from the given URL up to the specified
-        depth, extracting links and building a graph structure. Results are checkpointed
-        to S3.
+        depth, extracting links and building a graph structure. Results are
+        checkpointed.
 
         Requires permission: crawl:write
 
@@ -79,8 +78,6 @@ class CrawlResource(SyncAPIResource):
           crawl_id: Unique identifier for this crawl
 
           engines: List of engines to use
-
-          s3_bucket: S3 bucket for checkpointing
 
           url: Root URL to start crawling from
 
@@ -114,7 +111,6 @@ class CrawlResource(SyncAPIResource):
                 {
                     "crawl_id": crawl_id,
                     "engines": engines,
-                    "s3_bucket": s3_bucket,
                     "url": url,
                     "absolute_only": absolute_only,
                     "batch_size": batch_size,
@@ -159,7 +155,6 @@ class AsyncCrawlResource(AsyncAPIResource):
         *,
         crawl_id: str,
         engines: List[EngineType],
-        s3_bucket: str,
         url: str,
         absolute_only: bool | Omit = omit,
         batch_size: int | Omit = omit,
@@ -180,8 +175,8 @@ class AsyncCrawlResource(AsyncAPIResource):
         Create a crawl graph by recursively crawling from a root URL
 
         This endpoint crawls a website starting from the given URL up to the specified
-        depth, extracting links and building a graph structure. Results are checkpointed
-        to S3.
+        depth, extracting links and building a graph structure. Results are
+        checkpointed.
 
         Requires permission: crawl:write
 
@@ -189,8 +184,6 @@ class AsyncCrawlResource(AsyncAPIResource):
           crawl_id: Unique identifier for this crawl
 
           engines: List of engines to use
-
-          s3_bucket: S3 bucket for checkpointing
 
           url: Root URL to start crawling from
 
@@ -224,7 +217,6 @@ class AsyncCrawlResource(AsyncAPIResource):
                 {
                     "crawl_id": crawl_id,
                     "engines": engines,
-                    "s3_bucket": s3_bucket,
                     "url": url,
                     "absolute_only": absolute_only,
                     "batch_size": batch_size,

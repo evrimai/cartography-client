@@ -18,9 +18,6 @@ class ScrapeScrapeBulkParams(TypedDict, total=False):
     engines: Required[Iterable[ScrapeEngineParam]]
     """List of engines to use"""
 
-    s3_bucket: Required[str]
-    """S3 bucket for checkpointing"""
-
     urls: Required[SequenceNotStr[str]]
     """List of URLs to scrape"""
 

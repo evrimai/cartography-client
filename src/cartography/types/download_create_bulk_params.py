@@ -15,9 +15,6 @@ class DownloadCreateBulkParams(TypedDict, total=False):
     crawl_id: Required[str]
     """Unique identifier for this crawl"""
 
-    s3_bucket: Required[str]
-    """S3 bucket for storage and checkpoints"""
-
     urls: Required[SequenceNotStr[str]]
     """List of URLs to download"""
 
