@@ -34,7 +34,11 @@ class CrawlRequestParam(TypedDict, total=False):
 
     max_workers: int
 
+    proxy_password: Optional[str]
+
     proxy_url: Optional[str]
+
+    proxy_username: Optional[str]
 
     session_id: Optional[str]
 
