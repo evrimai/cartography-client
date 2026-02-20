@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestCrawl:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create(self, client: Cartography) -> None:
         crawl = client.workflows.request.crawl.create(
@@ -30,7 +30,7 @@ class TestCrawl:
         )
         assert_matches_type(WorkflowResult, crawl, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: Cartography) -> None:
         crawl = client.workflows.request.crawl.create(
@@ -56,7 +56,7 @@ class TestCrawl:
         )
         assert_matches_type(WorkflowResult, crawl, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: Cartography) -> None:
         response = client.workflows.request.crawl.with_raw_response.create(
@@ -70,7 +70,7 @@ class TestCrawl:
         crawl = response.parse()
         assert_matches_type(WorkflowResult, crawl, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: Cartography) -> None:
         with client.workflows.request.crawl.with_streaming_response.create(
@@ -86,7 +86,7 @@ class TestCrawl:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_bulk(self, client: Cartography) -> None:
         crawl = client.workflows.request.crawl.create_bulk(
@@ -100,7 +100,7 @@ class TestCrawl:
         )
         assert_matches_type(CrawlCreateBulkResponse, crawl, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create_bulk(self, client: Cartography) -> None:
         response = client.workflows.request.crawl.with_raw_response.create_bulk(
@@ -118,7 +118,7 @@ class TestCrawl:
         crawl = response.parse()
         assert_matches_type(CrawlCreateBulkResponse, crawl, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create_bulk(self, client: Cartography) -> None:
         with client.workflows.request.crawl.with_streaming_response.create_bulk(
@@ -144,7 +144,7 @@ class TestAsyncCrawl:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncCartography) -> None:
         crawl = await async_client.workflows.request.crawl.create(
@@ -154,7 +154,7 @@ class TestAsyncCrawl:
         )
         assert_matches_type(WorkflowResult, crawl, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncCartography) -> None:
         crawl = await async_client.workflows.request.crawl.create(
@@ -180,7 +180,7 @@ class TestAsyncCrawl:
         )
         assert_matches_type(WorkflowResult, crawl, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncCartography) -> None:
         response = await async_client.workflows.request.crawl.with_raw_response.create(
@@ -194,7 +194,7 @@ class TestAsyncCrawl:
         crawl = await response.parse()
         assert_matches_type(WorkflowResult, crawl, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncCartography) -> None:
         async with async_client.workflows.request.crawl.with_streaming_response.create(
@@ -210,7 +210,7 @@ class TestAsyncCrawl:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_bulk(self, async_client: AsyncCartography) -> None:
         crawl = await async_client.workflows.request.crawl.create_bulk(
@@ -224,7 +224,7 @@ class TestAsyncCrawl:
         )
         assert_matches_type(CrawlCreateBulkResponse, crawl, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create_bulk(self, async_client: AsyncCartography) -> None:
         response = await async_client.workflows.request.crawl.with_raw_response.create_bulk(
@@ -242,7 +242,7 @@ class TestAsyncCrawl:
         crawl = await response.parse()
         assert_matches_type(CrawlCreateBulkResponse, crawl, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create_bulk(self, async_client: AsyncCartography) -> None:
         async with async_client.workflows.request.crawl.with_streaming_response.create_bulk(
