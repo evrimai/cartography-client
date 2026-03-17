@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.17.1 (2026-03-17)
+
+Full Changelog: [v0.17.0...v0.17.1](https://github.com/evrimai/cartography-client/compare/v0.17.0...v0.17.1)
+
+### Bug Fixes
+
+* **pydantic:** do not pass `by_alias` unless set ([120575c](https://github.com/evrimai/cartography-client/commit/120575c3cb285af277e19ecc8d3e9ff1b32a3131))
+
+
+### Chores
+
+* **ci:** skip uploading artifacts on stainless-internal branches ([4b27693](https://github.com/evrimai/cartography-client/commit/4b27693f073e6c2b0c88ff19199327e4f9b6cebf))
+* **internal:** add request options to SSE classes ([5d4d8f0](https://github.com/evrimai/cartography-client/commit/5d4d8f052567c9e4b0e0bb170867cc9131d870d0))
+* **internal:** make `test_proxy_environment_variables` more resilient ([e99d6c3](https://github.com/evrimai/cartography-client/commit/e99d6c3d931223ee9649ba17be056d8423903ede))
+* **internal:** make `test_proxy_environment_variables` more resilient to env ([9cec901](https://github.com/evrimai/cartography-client/commit/9cec901f4f340e3f670ae3bc6124c212207af03c))
+* **internal:** remove mock server code ([82ddbe5](https://github.com/evrimai/cartography-client/commit/82ddbe53f683922aa8a8bf8e60d48eaa8c858b79))
+* update mock server docs ([ee730ae](https://github.com/evrimai/cartography-client/commit/ee730ae87d91b940b2e3e34beb563093e9479c26))
+
 ## 0.17.0 (2026-02-19)
 
 Full Changelog: [v0.16.0...v0.17.0](https://github.com/evrimai/cartography-client/compare/v0.16.0...v0.17.0)
