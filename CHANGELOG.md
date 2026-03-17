@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.17.2 (2026-03-17)
+
+Full Changelog: [v0.17.1...v0.17.2](https://github.com/evrimai/cartography-client/compare/v0.17.1...v0.17.2)
+
+### Bug Fixes
+
+* **deps:** bump minimum typing-extensions version ([fb5aa1a](https://github.com/evrimai/cartography-client/commit/fb5aa1adf15af284aef248388a62e1a92a725c9a))
+
 ## 0.17.1 (2026-03-17)
 
 Full Changelog: [v0.17.0...v0.17.1](https://github.com/evrimai/cartography-client/compare/v0.17.0...v0.17.1)
