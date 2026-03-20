@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.17.3 (2026-03-20)
+
+Full Changelog: [v0.17.2...v0.17.3](https://github.com/evrimai/cartography-client/compare/v0.17.2...v0.17.3)
+
+### Bug Fixes
+
+* sanitize endpoint path params ([b236698](https://github.com/evrimai/cartography-client/commit/b236698a656e89bdb088fdd74cb6ff7b5c4adfb2))
+
+
+### Chores
+
+* **internal:** tweak CI branches ([d2db2a1](https://github.com/evrimai/cartography-client/commit/d2db2a19386ccdc766223cc182010f7e0bc9f38f))
+
 ## 0.17.2 (2026-03-17)
 
 Full Changelog: [v0.17.1...v0.17.2](https://github.com/evrimai/cartography-client/compare/v0.17.1...v0.17.2)
