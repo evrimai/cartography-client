@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.18.0 (2026-03-27)
+
+Full Changelog: [v0.17.3...v0.18.0](https://github.com/evrimai/cartography-client/compare/v0.17.3...v0.18.0)
+
+### Features
+
+* **internal:** implement indices array format for query and form serialization ([facdaee](https://github.com/evrimai/cartography-client/commit/facdaee54e499c50d683b5e4d18f0dfeb4afc661))
+
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([3acf69d](https://github.com/evrimai/cartography-client/commit/3acf69d1e21aeb8ad1f284f331e4dd94334ee2bc))
+* **internal:** update gitignore ([9d15456](https://github.com/evrimai/cartography-client/commit/9d154560fc67a94c5db2f9b0d2ee6f15ca5f0954))
+
 ## 0.17.3 (2026-03-20)
 
 Full Changelog: [v0.17.2...v0.17.3](https://github.com/evrimai/cartography-client/compare/v0.17.2...v0.17.3)
